@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/padding_horizontal"
+    android:paddingRight="@dimen/padding_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/form_layout"
+        android:layout_above="@+id/btn_pay"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".25">
+
+            <RelativeLayout
+                android:id="@+id/card_preview_back"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/card_gradient" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/hide_cvc"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight=".47"
+                        android:background="@drawable/slash_slash_gradiet" />
+
+                    <TextView
+                        android:id="@+id/card_preview_cvc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/hide_cvc"
+                        android:layout_weight=".1"
+                        android:hint="CVV"
+                        android:text="CVV"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card_preview_front"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/card_gradient" />
+
+                <TextView
+                    android:id="@+id/card_preview_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="35dp"
+                    android:hint="Name Of Card"
+                    android:textAllCaps="true"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+
+                <TextView
+                    android:id="@+id/card_preview_expiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="35dp"
+                    android:hint="Expiry Date"
+                    android:textAllCaps="true"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+
+                <TextView
+                    android:id="@+id/card_preview_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="true"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/card_preview_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:gravity="top|center_horizontal"
+                    android:hint="XXXX XXXX XXXX XXXX"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/address_line1"
+                        android:layout_width="187dp"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext_background"
+                        android:textColor="@color/text_color"
+                        android:hint="Address Line1"
+                        android:textColorHint="@color/text_color"
+                        android:inputType="textPersonName"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp" />
+                    <EditText
+                        android:id="@+id/address_line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_edit_btn"
+                        android:textColor="@color/text_color"
+                        android:hint="Address Line1"
+                        android:textColorHint="@color/text_color"
+                        android:inputType="textPersonName"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp" />
+
+                    <EditText
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_edit_btn"
+                        android:textColor="@color/text_color"
+                        android:hint="City"
+                        android:textColorHint="@color/text_color"
+                        android:inputType="textPersonName"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp"
+
+                        />
+
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Country"
+                        android:spinnerMode="dropdown"
+                        />
+                    <Spinner
+                        android:id="@+id/stateSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Country"
+                        android:spinnerMode="dropdown" />
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/countriesLL"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_below="@+id/card_number"-->
+                    <!--android:background="#666666"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:weightSum="1">-->
+
+                    <!---->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/countriesLL"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/card_number"-->
+                    <!--android:background="@drawable/background_edit_btn"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:weightSum="1">-->
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/countriesET"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_below="@+id/card_name"-->
+                    <!--android:textColor="@color/text_color"-->
+                    <!--android:layout_weight=".95"-->
+                    <!--android:background="@drawable/background_edit_btn"-->
+                    <!--android:hint="State"-->
+                    <!--android:textColorHint="@color/text_color"-->
+                    <!--android:lines="1"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:paddingLeft="15dp" />-->
+
+
+
+                    <!--<Button-->
+                    <!--android:id="@+id/countryBT"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_weight=".05"-->
+                    <!--android:textColor="@color/text_color"-->
+                    <!--android:hint="..."-->
+                    <!--android:textColorHint="@color/text_color"-->
+                    <!--android:lines="1"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:paddingLeft="15dp" />-->
+                    <!--</LinearLayout>-->
+
+
+
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/states"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_below="@+id/card_number"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:weightSum="1">-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/state"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="30dp"-->
+                            <!--android:layout_below="@+id/card_name"-->
+                            <!--android:textColor="@color/text_color"-->
+                            <!--android:layout_weight=".60"-->
+                            <!--android:background="@drawable/background_edit_btn"-->
+                            <!--android:hint="State"-->
+                            <!--android:textColorHint="@color/text_color"-->
+                            <!--android:lines="1"-->
+                            <!--android:maxLines="1"-->
+                            <!--android:paddingLeft="15dp" />-->
+
+                        <!--<android.support.v4.widget.Space-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight=".05" />-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/zip_code"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="30dp"-->
+                            <!--android:layout_weight=".35"-->
+                            <!--android:textColor="@color/text_color"-->
+                            <!--android:background="@drawable/background_edit_btn"-->
+                            <!--android:hint="Zip Code"-->
+                            <!--android:textColorHint="@color/text_color"-->
+                            <!--android:lines="1"-->
+                            <!--android:maxLines="1"-->
+                            <!--android:paddingLeft="15dp" />-->
+                    <!--</LinearLayout>-->
+
+                    <EditText
+                        android:id="@+id/zip_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_color"
+                        android:background="@drawable/background_edit_btn"
+                        android:hint="Zip Code"
+                        android:textColorHint="@color/text_color"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/payment_amount_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/payment_amount_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="Payment Amount"
+                            android:textColor="@color/text_color"
+                            android:textSize="17sp" />
+                        <TextView
+                            android:id="@+id/payment_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginLeft="10dp"
+                            android:text="$500.00"
+                            android:textColor="@color/text_color"
+                            android:textSize="25sp" />
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/card_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/payment_amount_layout"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_edit_btn"
+                        android:textColor="@color/text_color"
+                        android:hint="Name of Card"
+                        android:textColorHint="@color/text_color"
+                        android:inputType="textPersonName"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp" />
+
+                    <EditText
+                        android:id="@+id/card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/card_name"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_edit_btn"
+                        android:hint="Card Number"
+                        android:textColorHint="@color/text_color"
+                        android:textColor="@color/text_color"
+                        android:inputType="phone"
+                        android:lines="1"
+                        android:maxLength="19"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp" />
+
+                    <LinearLayout
+                        android:id="@+id/expiry_date_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card_number"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:id="@+id/expiry_date"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/card_name"
+                            android:textColor="@color/text_color"
+                            android:layout_weight=".50"
+                            android:background="@drawable/background_edit_btn"
+                            android:hint="Expiry Date"
+                            android:textColorHint="@color/text_color"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:maxLength="5"
+                            android:maxLines="1"
+                            android:paddingLeft="15dp" />
+
+                        <android.support.v4.widget.Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".05" />
+
+                        <EditText
+                            android:id="@+id/cvc"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight=".45"
+                            android:textColor="@color/text_color"
+                            android:background="@drawable/background_edit_btn"
+                            android:hint="CVV"
+                            android:textColorHint="@color/text_color"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:maxLength="3"
+                            android:maxLines="1"
+                            android:paddingLeft="15dp" />
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="@drawable/rounded_deviceonline_background"
+
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="PLACE MY ORDER"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

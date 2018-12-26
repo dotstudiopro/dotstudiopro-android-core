@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="10dp"
+    android:minHeight="70dp">
+
+    <RelativeLayout
+        android:id="@+id/recommendedItemRL"
+        android:layout_width="0dp"
+        android:layout_weight="0.25"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <ProgressBar
+            android:id="@+id/recommendedItemProgressBar"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/recommendedItemIV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            fresco:actualImageScaleType="fitCenter"
+            android:background="#ffffff"
+            android:clickable="true"/>
+
+        <LinearLayout
+            android:id="@+id/parentProgressContanier"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_above="@+id/recommendedItemLL"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/childProgressContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recommendedItemLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/recommendedItemIV"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/recommendedItemTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/recommendedSeriesItemTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recommendedItemRL2"
+        android:layout_width="0dp"
+        android:layout_weight="0.25"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <ProgressBar
+            android:id="@+id/recommendedItemProgressBar2"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/recommendedItemIV2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            fresco:actualImageScaleType="fitCenter"
+            android:background="#ffffff"
+            android:clickable="true"/>
+
+        <LinearLayout
+            android:id="@+id/parentProgressContanier2"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_above="@+id/recommendedItemLL2"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/childProgressContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recommendedItemLL2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/recommendedItemIV2"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/recommendedItemTV2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#878d90"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/recommendedSeriesItemTV2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#878d90"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recommendedItemRL3"
+        android:layout_width="0dp"
+        android:layout_weight="0.25"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <ProgressBar
+            android:id="@+id/recommendedItemProgressBar3"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/recommendedItemIV3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            fresco:actualImageScaleType="fitCenter"
+            android:background="#ffffff"
+            android:clickable="true"/>
+
+        <LinearLayout
+            android:id="@+id/parentProgressContanier3"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_above="@+id/recommendedItemLL3"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/childProgressContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recommendedItemLL3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/recommendedItemIV3"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/recommendedItemTV3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#878d90"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/recommendedSeriesItemTV3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#878d90"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recommendedItemRL4"
+        android:layout_width="0dp"
+        android:layout_weight="0.25"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <ProgressBar
+            android:id="@+id/recommendedItemProgressBar4"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/recommendedItemIV4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            fresco:actualImageScaleType="fitCenter"
+            android:background="#ffffff"
+            android:clickable="true"/>
+
+        <LinearLayout
+            android:id="@+id/parentProgressContanier4"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_above="@+id/recommendedItemLL4"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/childProgressContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recommendedItemLL4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/recommendedItemIV4"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/recommendedItemTV4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#878d90"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/recommendedSeriesItemTV4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#878d90"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

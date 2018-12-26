@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:background="#171717"
+    android:minHeight="30dp">
+
+    <TextView
+        android:id="@+id/categoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="@string/search_trailers"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceButton"
+        android:paddingLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/categoryImage"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/category_search_button" />
+
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#0c2544"
+    android:id="@+id/parentPopularCategoriesItem">
+
+    <!--android:background="#0c2544"-->
+
+    <!--<com.dotstudioz.dotstudioPRO.corelibrary.dotstudiovideoplayer.CustomDoubleWidthVideoView
+        android:id="@+id/popularCategoryVideoSurface"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>-->
+
+
+    <FrameLayout
+        android:id="@+id/videoTextureViewFrameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp">
+        <!--<com.dotstudioz.dotstudioPRO.corelibrary.player.VideoTextureView
+            android:id="@+id/videoTextureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+
+    
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/popularCategoriesImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="1"
+        android:visibility="visible"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/gradient_shape_core_top">
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradient_shape_core">
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/busyCursorProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/muteImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp">
+        <ImageView
+            android:id="@+id/tapToLaunchImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"/>
+        <TextView
+            android:id="@+id/tapToLaunchTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#eeeeee"
+            android:paddingLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:text="Tap to learn more"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/titleParentParentContainerRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp">
+        <LinearLayout
+            android:id="@+id/titleParentContainerLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#eeeeee"
+                android:text="SAMPLE TEXT 1"
+                android:textSize="30sp"/>
+            <!--<com.facebook.drawee.view.SimpleDraweeView-->
+            <com.dotstudioz.dotstudioPRO.corelibrary.components.WrapContentDraweeView
+                android:id="@+id/titleImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/descTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#eeeeee"
+                android:layout_below= "@id/titleTextView"
+                android:text=""
+                android:layout_marginRight="10dp"
+                android:textSize="14dp"/>
+        </LinearLayout>
+
+        <!--<ImageView
+            android:id="@+id/upArrowImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"/>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CoreLibrary</string>
+
+    <string name="playerview_text">This is a YouTubePlayerView!</string>
+    <string name="error_thumbnail_view">There was an error initializing the YouTubeThumbnailView (%1$s)</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+
+    <string name="description">Media Controls</string>
+    <string name="search_trailers">Trailers</string>
+    <string name="season_name">Season 1</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="cancel">Cancel</string>
+    <string name="device_dialog_title">REGISTER YOUR DEVICE ONLINE</string>
+    <string name="device_dialog_title_modal">SUBSCRIBE OR ADD TO MY LIST</string>
+    <string name="message">Visit revry.tv/activate on your smartphone or \n computer and enter this code: </string>
+
+    <string name="message_new">Visit revry.tv/activate to signup and register device \n through your smartphone or computer </string>
+
+
+</resources>

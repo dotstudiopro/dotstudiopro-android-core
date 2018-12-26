@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:noNamespaceSchemaLocation="vast.xsd">
+    <Ad id="pre-roll">        <InLine>            <AdSystem><![CDATA[Revive Adserver]]></AdSystem>
+                <AdTitle><![CDATA[Scion iAM 15 sec]]></AdTitle>
+                    <Description><![CDATA[Inline Video Ad]]></Description><Impression id="primaryAdServer"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/lg.php?bannerid=76&campaignid=24&zoneid=1107&cb=5622dc92ba]]></Impression>
+                    
+			    <Creatives><Creative sequence="1" id="76"><Linear>
+                    <Duration>00:00:15</Duration>
+                    
+                    <VideoClicks>
+                        <ClickThrough><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/ck.php?oaparams=2__bannerid=76__zoneid=1107__cb=5622dc92ba__oadest=http%3A%2F%2Fwww.scion.com%2Fcars%2FiM2016%2F]]></ClickThrough>
+                    </VideoClicks>
+                    <MediaFiles>
+                        <MediaFile delivery="progressive" bitrate="400" width="640" height="480" type="video/x-mp4"><![CDATA[https://a28082948ad4f83926c6-6e0113d683671ca1d452b054263445af.ssl.cf1.rackcdn.com/iAiM_15Sec-desktop.mp4]]></MediaFile>
+                    </MediaFiles>
+                <TrackingEvents>
+                    <Tracking event="start"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=start]]></Tracking>
+                    <Tracking event="midpoint"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=midpoint]]></Tracking>
+                    <Tracking event="firstQuartile"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=firstquartile]]></Tracking>
+                    <Tracking event="thirdQuartile"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=thirdquartile]]></Tracking>
+                    <Tracking event="complete"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=complete]]></Tracking>
+                    <Tracking event="mute"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=mute]]></Tracking>
+                    <Tracking event="pause"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=pause]]></Tracking>
+                    <Tracking event="replay"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=replay]]></Tracking>
+                    <Tracking event="fullscreen"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=fullscreen]]></Tracking>
+                    <Tracking event="stop"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=stop]]></Tracking>
+                    <Tracking event="unmute"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=unmute]]></Tracking>
+                   <Tracking event="resume"><![CDATA[http://adserver.dotstudiopro.com/adserver/www/delivery/fc.php?script=deliveryLog:oxLogVast:logImpressionVast&banner_id=76&zone_id=1107&vast_event=resume]]></Tracking>
+                </TrackingEvents></Linear></Creative><Creative sequence="1"><CompanionAds>
+                <Companion id="companion" width="300" height="250"><HTMLResource><![CDATA[<a href='http://adserver.dotstudiopro.com/adserver/www/delivery/ck.php?oaparams=2__bannerid=77__zoneid=0__cb=24212f18c3__oadest=http%3A%2F%2Fwww.scion.com%2Fcars%2FiM2016%2F' target='_blank'><img src='https://a28082948ad4f83926c6-6e0113d683671ca1d452b054263445af.ssl.cf1.rackcdn.com/scion_iM_companion_v1.jpg' width='300' height='250' alt='' title='' border='0' /></a><div id='beacon_24212f18c3' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://adserver.dotstudiopro.com/adserver/www/delivery/lg.php?bannerid=77&amp;campaignid=24&amp;zoneid=0&amp;cb=24212f18c3' width='0' height='0' alt='' style='width: 0px; height: 0px;' /></div>]]></HTMLResource><CompanionClickThrough><![CDATA[http://www.scion.com/cars/iM2016/]]></CompanionClickThrough>
+                </Companion>
+            </CompanionAds></Creative></Creatives>
+
+                        </InLine>
+    </Ad>
+
+</VAST>

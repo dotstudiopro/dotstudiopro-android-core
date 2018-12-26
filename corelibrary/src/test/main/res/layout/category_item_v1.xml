@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:minHeight="70dp">
+
+    <RelativeLayout
+        android:id="@+id/extraSpaceViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/firstImageRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right">
+
+            <RelativeLayout
+                android:id="@+id/rosterImageRL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="2dp"
+                android:paddingLeft="10dp">
+
+                <ProgressBar
+                    android:id="@+id/rosterItemProgressBar1"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    fresco:actualImageScaleType="fitCenter"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondImageRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/rosterImageRL2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_centerInParent="true"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp">
+
+                <ProgressBar
+                    android:id="@+id/rosterItemProgressBar2"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    fresco:actualImageScaleType="fitCenter"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/thirdImageRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left">
+
+            <RelativeLayout
+                android:id="@+id/rosterImageRL3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="2dp">
+
+                <ProgressBar
+                    android:id="@+id/rosterItemProgressBar3"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    fresco:actualImageScaleType="fitCenter"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/extraSpaceViewGenre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+        <TextView
+            android:text=" "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>

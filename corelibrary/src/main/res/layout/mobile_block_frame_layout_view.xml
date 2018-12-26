@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/mobileBlockPostRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/siv"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            />
+        <RelativeLayout
+            android:id="@+id/sivRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/popstar_homepage_black_gradient">
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/mobileBlockTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="16sp"
+                android:text="MOHSIN"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:id="@+id/mobileBlockDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:text="MOHSIN"
+                android:layout_margin="10dp"
+                android:visibility="gone"/>
+            <LinearLayout
+                android:id="@+id/nonPostLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone">
+                <ImageView
+                    android:id="@+id/nonPostDescription2ImageView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/nonPostDescription2TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:text="MOHSIN"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/mobileBlockReadMoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_d03b8f_border_button_d03b8f_background"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:text="Read More"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/mobileBlockMovieRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/siv1"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            />
+        <RelativeLayout
+            android:id="@+id/siv1RelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gradient_shape_core_bottom_black">
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/play_button_large_white_trans_big"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/mobileBlockMovieTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:textAlignment="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/mobileBlockMovieDescTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:ellipsize="end"
+                android:textAlignment="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text=""/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

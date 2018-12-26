@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/firstRowRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<ImageView-->
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/videoThumbnailImageView"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_marginRight="6dp"
+            android:layout_alignParentLeft="true"
+            android:background="#000000"
+            android:visibility="gone"
+            android:layout_centerVertical="true"/>
+        <!--android:src="@drawable/placeholder4"-->
+
+        <ImageView
+            android:id="@+id/moreInfoImageView"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@id/videoThumbnailImageView"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:id="@+id/seasonAndSeriesNameLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/moreInfoImageView"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/seasonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:textColor="#eeeeee"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="32dp"
+                android:layout_centerVertical="true"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+            <TextView
+                android:id="@+id/seriesTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text=""
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:textColor="#eeeeee"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="32dp"
+                android:layout_centerVertical="true"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/seasonPlayImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="6dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <View
+            android:id="@+id/extraSpaceView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#f00"
+            android:layout_below="@+id/seasonPlayImage"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/descLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstRowRelativeLayout"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <!--android:layout_marginLeft="112dp"-->
+        <TextView
+            android:id="@+id/episodeInfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textColor="#838383"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="120dp"
+            android:text="1999 | English | USA | 44 mins"/>
+
+        <TextView
+            android:id="@+id/episodeDescTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textColor="#838383"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. "/>
+    </LinearLayout>
+
+</RelativeLayout>
