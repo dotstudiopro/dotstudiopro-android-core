@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/companyLogoImageView"
-            android:layout_width="275dp"
-            android:layout_height="125dp"
+            android:layout_width="165dp"
+            android:layout_height="75dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp" />
 
@@ -120,7 +120,7 @@
             android:nextFocusUp="@+id/submitButton"
             android:orientation="horizontal"
             android:selectAllOnFocus="true"
-             android:visibility="gone">
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="44dip"
@@ -161,8 +161,7 @@
             android:id="@+id/skipButton"
             android:layout_width="230dp"
             android:layout_height="44dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"
             android:background="@null"
             android:focusable="true"
             android:focusableInTouchMode="true"

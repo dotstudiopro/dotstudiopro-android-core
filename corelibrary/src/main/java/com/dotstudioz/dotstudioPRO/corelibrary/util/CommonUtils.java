@@ -44,6 +44,7 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Set;
 
 /**
  * Created by Admin on 16-01-2016.
@@ -239,6 +240,43 @@ public class CommonUtils {
         return ApplicationConstants.COMPANY_KEY_NOT_API_KEY;
     }
 
+
+    public double convertStringToDouble(String price) {
+        try {
+            Double priceDouble = -1d;
+            if (price != null && price.length() > 0) {
+                priceDouble = Double.parseDouble(price);
+            }
+            return priceDouble;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    /**
+     * Expecting a rental price, such as "1.99",
+     * the response will be 2
+     * the logic is ==>
+     * if x >= 1.5 then it becomes 2
+     * if x < 1.5 then it becomes 1
+     *
+     * @param price ("1.99")
+     * @return "2"
+     */
+    public String getTierFromPriceTag(String price) {
+        try {
+            double d = convertStringToDouble(price);
+            int tierValue = (int) Math.round(d);
+            StringBuilder concatenated = new StringBuilder();
+            concatenated.append(tierValue);
+            return concatenated.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
     public void setCompanyKeyNotAPIKey(String xAccessToken) {
         try {
             Base64 decoder = new Base64(true);
@@ -332,7 +370,7 @@ public class CommonUtils {
                             PorterDuff.Mode.SRC_IN);
                 }*/
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             Log.d("CommonUtils", "styleMediaController");
         }
@@ -545,7 +583,7 @@ public class CommonUtils {
         protected Bitmap doInBackground(String... urls) {
             Bitmap mIcon11 = null;
             try {
-                System.out.println("urlDisplay==>"+urlDisplay);
+                System.out.println("urlDisplay==>" + urlDisplay);
                 InputStream in = new URL(urlDisplay).openStream();
                 mIcon11 = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
@@ -562,23 +600,92 @@ public class CommonUtils {
     }
 
     public String attachHttpsProtocolToUrl(String url) {
-        if(url != null) {
+        if (url != null) {
             if (url.indexOf("https:") < 0 && url.indexOf("http:") < 0) {
                 if (url.substring(0, 2).equalsIgnoreCase("//")) {
                     url = "https:" + url;
                 } else {
                     url = "https://" + url;
                 }
-            } else if(url.indexOf("https:////") == 0) {
+            } else if (url.indexOf("https:////") == 0) {
                 url = url.replace("https:////", "https://");
-            } else if(url.indexOf("http:////") == 0) {
+            } else if (url.indexOf("http:////") == 0) {
                 url = url.replace("http:////", "http://");
             }
-            if(url != null && url.length() > 0) {
+            if (url != null && url.length() > 0) {
                 return url;
             }
         }
 
         return "";
     }
+
+    public static String getPlatformNameFromTechnicalName(String tName) {
+        try {
+            String mName = tName;
+            switch (tName) {
+                case "roku_mrss":
+                    mName = "Roku mrss";
+                    break;
+                case "vewd_mrss":
+                    mName = "Vewd mrss";
+                    break;
+                case "xumo_mrss":
+                    mName = "Xumo mrss";
+                    break;
+                case "android_TV":
+                    mName = "Android TV";
+                    break;
+                case "amazon_fire":
+                    mName = "Amazon Fire TV";
+                    break;
+                case "andriod":
+                    mName = "Android";
+                    break;
+                case "ios":
+                    mName = "iOS";
+                    break;
+                case "roku":
+                    mName = "Roku TV";
+                    break;
+                case "apple_tv":
+                    mName = "Apple TV";
+                    break;
+                case "website":
+                    mName = "Website";
+                    break;
+
+                default:
+                    mName = tName;
+            }
+            return mName;
+        } catch (Exception e) {
+            return "";
+        }
+
+    }
+
+    /**
+     * Utlity method to convert set into comma separated string and convert the valid alert message
+     * @param stringSet ==> platforms set technical values
+     * @return Form the Message for showing it into alert
+     */
+    public static String getStringPlatformWithChannel(Set<String> stringSet) {
+
+        StringBuilder strPlatforms = new
+                StringBuilder();
+        Object[] array = stringSet.toArray();
+        for (int index = 0; index < array.length; index++) {
+            if (index == 0) {
+                strPlatforms.append(getPlatformNameFromTechnicalName(array[index].toString()));
+            } else if (index == (array.length - 1)) {
+                strPlatforms.append(" and ").append(getPlatformNameFromTechnicalName(array[index].toString()));
+
+            } else {
+                strPlatforms.append(",").append(getPlatformNameFromTechnicalName(array[index].toString()));
+            }
+        }
+        return strPlatforms.toString();
+    }
+
 }

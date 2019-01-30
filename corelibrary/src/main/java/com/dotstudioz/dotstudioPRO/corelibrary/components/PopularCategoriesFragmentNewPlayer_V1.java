@@ -25,6 +25,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dotstudioz.dotstudioPRO.corelibrary.R;
+import com.dotstudioz.dotstudioPRO.corelibrary.util.CommonUtils;
+import com.dotstudioz.dotstudioPRO.dsplayer.player.assets.AssetsVideoSource;
 import com.dotstudioz.dotstudioPRO.services.constants.ApplicationConstants;
 
 import com.dotstudioz.dotstudioPRO.dsplayer.player.PlayControlControllerView;
@@ -63,6 +65,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
     private String titleLogo;
     private String desc;
     private String videoPosterURL;
+    public boolean showPosterAndNotPlayVideo;
     public String colorVaule;
     private boolean isDancingArrowVisible = false;
     private int indexOfThisPopularCategoriesFragment = 0;
@@ -164,8 +167,13 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
         if(enableTapToLaunchListener) {
             //imageView.setOnClickListener(popularCategoriesClickHandler);
         }
-        Uri uri = Uri.parse((videoPosterURL!=null)?videoPosterURL:"");
-        imageView.setImageURI(uri);
+        if(showPosterAndNotPlayVideo) {
+            Uri uri = Uri.parse((titleLogo!=null)?"https://images.dotstudiopro.com/"+titleLogo:"");
+            imageView.setImageURI(uri);
+        } else {
+            Uri uri = Uri.parse((videoPosterURL != null) ? videoPosterURL : "");
+            imageView.setImageURI(uri);
+        }
 
         if(enableTapToLaunchListener) {
             imageView.setOnTouchListener(new View.OnTouchListener() {
@@ -178,7 +186,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
                         return true;
                     }
                     else if(motionEvent.getAction() == MotionEvent.ACTION_MOVE) {
-                        Log.d("PopularCategoriesFragmentNewPlayer_V1", "Moving");
+                        Log.d("enabledToLaunch", "Moving");
                         x2 = motionEvent.getX();
                         y2 = motionEvent.getY();
                         dx = x2-x1;
@@ -192,7 +200,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
                                 //direction = "left";
                             }
                         } else {
-                            Log.d("PopularCategoriesFragmentNewPlayer_V1", "dy==>"+dy);
+                            Log.d("enabledToLaunch", "dy==>"+dy);
                             if(dy>100) {
                                 //down
                                 if(touchDown) {
@@ -210,7 +218,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
                         return true;
                     }
                     else if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                        Log.d("PopularCategoriesFragmentNewPlayer_V1", "ACTION_UP");
+                        Log.d("enabledToLaunch", "ACTION_UP");
                         if(touchDown) {
                             if (categorySlug != null && channelSlug != null && videoID != null
                                     && categorySlug.length() > 0 && channelSlug.length() > 0 && videoID.length() > 0) {
@@ -348,11 +356,16 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
 
 
 
-        videoTextureViewFrameLayout = (FrameLayout) view.findViewById(R.id.videoTextureViewFrameLayout);
-        /*videoTextureView = (VideoTextureView) view.findViewById(R.id.videoTextureView);
-        videoTextureView.setSurfaceTextureListener(this);*/
+        if(showPosterAndNotPlayVideo && titleLogo != null && titleLogo.length() > 0) {
+            titleImageView.setVisibility(View.GONE);
+            busyCursorProgressBar.setVisibility(View.GONE);
+        } else {
+            videoTextureViewFrameLayout = (FrameLayout) view.findViewById(R.id.videoTextureViewFrameLayout);
+            /*videoTextureView = (VideoTextureView) view.findViewById(R.id.videoTextureView);
+            videoTextureView.setSurfaceTextureListener(this);*/
 
-        initializeVideoTexturePresenterPlayer();
+            initializeVideoTexturePresenterPlayer();
+        }
         return view;
     }
 
@@ -360,6 +373,8 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
         /*videoTextureViewFrameLayout = (FrameLayout) view.findViewById(R.id.videoTextureViewFrameLayout);
         videoTextureView = (VideoTextureView) view.findViewById(R.id.videoTextureView);
         videoTextureView.setSurfaceTextureListener(this);*/
+
+        Log.d("PopCatFraNPla", "reInitializeVideoTexturePresenterPlayer() called!!!");
 
         initializeVideoTexturePresenterPlayer();
     }
@@ -388,7 +403,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
                     return true;
                 }
                 else if(motionEvent.getAction() == MotionEvent.ACTION_MOVE) {
-                    Log.d("PopularCategoriesFragmentNewPlayer_V1", "Moving");
+                    Log.d("PopCatFraNPla", "Moving");
                     x2 = motionEvent.getX();
                     y2 = motionEvent.getY();
                     dx = x2-x1;
@@ -402,7 +417,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
                             //direction = "left";
                         }
                     } else {
-                        Log.d("PopularCategoriesFragmentNewPlayer_V1", "dy==>"+dy);
+                        Log.d("PopCatFraNPla", "dy==>"+dy);
                         if(dy>100) {
                             //down
                             if(touchDown) {
@@ -420,7 +435,7 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
                     return true;
                 }
                 else if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                    Log.d("PopularCategoriesFragmentNewPlayer_V1", "ACTION_UP");
+                    Log.d("PopCatFraNPla", "ACTION_UP");
                     if(touchDown) {
                         if (categorySlug != null && channelSlug != null && videoID != null
                                 && categorySlug.length() > 0 && channelSlug.length() > 0 && videoID.length() > 0) {
@@ -454,12 +469,24 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
         //videoTexturePresenter.setMediaControllerForThePlayer(mediaController);
         //videoTexturePresenter.setMediaControllerForThePlayer(playControlControllerView);
 
-        VideoSource source = HlsVideoSource
-                .newBuilder(Uri.parse(videoToPlayURL), "UserAgent")
-                .bufferSegmentSize(64 * 1024)
-                .bufferSegmentCount(256)
-                .eventHandler(new Handler())
-                .build();
+
+        VideoSource source;
+        if(videoToPlayURL.substring((videoToPlayURL.length()-4), videoToPlayURL.length()).equalsIgnoreCase("m3u8")) {
+            source = HlsVideoSource
+                    .newBuilder(Uri.parse(videoToPlayURL), "UserAgent")
+                    .bufferSegmentSize(64 * 1024)
+                    .bufferSegmentCount(256)
+                    .eventHandler(new Handler())
+                    .build();
+        } else {
+            source = AssetsVideoSource
+                    //.newBuilder(Uri.parse(convertToURLEscapingIllegalCharacters(videoUrl).toString()), "UserAgent")
+                    .newBuilder(Uri.parse(CommonUtils.getInstance().attachHttpsProtocolToUrl(videoToPlayURL.toString())), "UserAgent")
+                    .bufferSegmentSize(64 * 1024)
+                    .bufferSegmentCount(256)
+                    .build();
+        }
+
 
 
         videoTexturePresenter.setSource(source);
@@ -468,6 +495,23 @@ public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements T
             @Override
             public void onError(Exception e) {
                 //System.out.println("onError .... Caught inside the popular categories fragment number==>"+getIndexOfThisPopularCategoriesFragment());
+                e.printStackTrace();
+                Log.d("PopCatFraNPla", "videoToPlayURL ==>"+videoToPlayURL);
+                Log.d("PopCatFraNPla", "Inside onErroristener ==>"+e.getMessage());
+                try {
+                    if (e != null && e.getMessage() != null && e.getMessage().equalsIgnoreCase("Response code: 403")) {
+                        videoToPlayURL = videoToPlayURL.replace("m3u8", "mp4");
+                        VideoSource source = AssetsVideoSource
+                                //.newBuilder(Uri.parse(convertToURLEscapingIllegalCharacters(videoUrl).toString()), "UserAgent")
+                                .newBuilder(Uri.parse(CommonUtils.getInstance().attachHttpsProtocolToUrl(videoToPlayURL.toString())), "UserAgent")
+                                .bufferSegmentSize(64 * 1024)
+                                .bufferSegmentCount(256)
+                                .build();
+                        videoTexturePresenter.setSource(source);
+                    }
+                } catch(Exception ee) {
+                    ee.printStackTrace();
+                }
                 if (ApplicationConstants.CURRNET_LOADED_VIEW == ApplicationConstants.HOME_VIEW &&
                         ApplicationConstants.currentlySelectedPopularCategoriesPage == getIndexOfThisPopularCategoriesFragment()) {
                     reInitializeVideoTexturePresenterPlayer();

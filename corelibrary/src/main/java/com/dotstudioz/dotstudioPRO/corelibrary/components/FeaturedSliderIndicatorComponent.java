@@ -45,9 +45,9 @@ public class FeaturedSliderIndicatorComponent implements CategorySliderCenterTex
         if(showIndicatorBackgroundColor) {
             parentRL.setBackgroundColor(Color.parseColor("#ff0000"));
             //ABS
-            parentRL.setBackgroundColor(Color.parseColor("#ffffff"));
+            //parentRL.setBackgroundColor(Color.parseColor("#ffffff"));
             //CelebrityPage & Nosey
-            parentRL.setBackgroundResource(indicatorBackgroundResource);
+            //parentRL.setBackgroundResource(indicatorBackgroundResource);
             //REVRY
             //parentRL.setBackgroundColor(Color.parseColor("#000000"));
 
@@ -88,13 +88,19 @@ public class FeaturedSliderIndicatorComponent implements CategorySliderCenterTex
 
     @Override
     public void selectedSliderIndex(int position) {
-        if(position > 0) {
-            position = position - 1;
+        //Log.d("FeaturedSliderIndicatorComponent", numberOfIndicators+"<==numberOfIndicators<==FeaturedSliderIndicatorComponent1==>position==>"+position);
+        if(position == 0) {
+            position = numberOfIndicators;
+        } else if(position == 1) {
+            position = 1;
         }
+
+
+        //Log.d("FeaturedSliderIndicatorComponent", numberOfIndicators+"<==numberOfIndicators<==FeaturedSliderIndicatorComponent2==>position==>"+position);
         if(hsv != null) {
             if(hsv.getChildCount() > 0) {
                 for(int i = 0; i < ((LinearLayout)hsv.getChildAt(0)).getChildCount(); i++) {
-                    if(i == position)
+                    if(i == (position-1))
                         ((ImageView)((LinearLayout)hsv.getChildAt(0)).getChildAt(i)).setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_circle).color(activeColor));
                     else
                         ((ImageView)((LinearLayout)hsv.getChildAt(0)).getChildAt(i)).setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_circle).color(backgroundColor));

@@ -136,6 +136,8 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
     public boolean hide3Dots = false;
     public boolean showMoreButton = false;
 
+    public boolean isFeaturedCategoryNotPresent = false;
+
     public ArrayList<ChannelMyListDTO> channelMyListDTOArrayList = new ArrayList<>();
 
     public CategoriesPageRecyclerViewComponent_V1(Activity mContext, LinearLayout mContainer) {
@@ -727,7 +729,13 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
                 int newImageWidth = ((2* width)/5);
@@ -1007,7 +1015,13 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
                 int newImageWidth = ((2* width)/5);
@@ -1034,7 +1048,13 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
                 int newImageWidth = ((2* width)/5);
@@ -1059,7 +1079,13 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
                 int newImageWidth = ((2* width)/5);

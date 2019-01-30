@@ -112,14 +112,14 @@ public class GenreAdapter extends BaseAdapter {
 
             String imageString = "";
             try {
-                if(spotLightCategoriesDTOList.get(position).getSpotLightChannelDTOList() != null &&
-                        spotLightCategoriesDTOList.get(position).getSpotLightChannelDTOList().size() == 0) {
+                /*if(spotLightCategoriesDTOList.get(position).getSpotLightChannelDTOList() != null &&
+                        spotLightCategoriesDTOList.get(position).getSpotLightChannelDTOList().size() == 0) {*/
                     imageString = spotLightCategoriesDTOList.get(position).getPoster();
                     Log.d("GenreAdapter", "imageString1==>"+imageString);
-                } else {
+                /*} else {
                     imageString = spotLightCategoriesDTOList.get(position).getSpotLightChannelDTOList().get(0).getPoster();
                     Log.d("GenreAdapter", "imageString2==>"+imageString);
-                }
+                }*/
             } catch(Exception e) {
                 e.printStackTrace();
             }

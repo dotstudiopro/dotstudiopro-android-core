@@ -3,6 +3,7 @@ package com.dotstudioz.dotstudioPRO.corelibrary.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PointF;
 import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -98,6 +99,10 @@ public class BlogPageAdapter extends BaseAdapter {
             //convertView.findViewById(R.id.iv1).setPadding(3, 3, 3, 3);
             convertView.findViewById(R.id.iv1).setLayoutParams(params1);
             convertView.findViewById(R.id.iv1).setClickable(true);
+            /*PointF focusPoint = new PointF(0f, 0f);
+            ((SimpleDraweeView)convertView.findViewById(R.id.iv1))
+                    .getHierarchy()
+                    .setActualImageFocusPoint(focusPoint);*/
             //iv1.setTag(((CategoriesDTO) categoriesDTOArrayList.get(i)).getChannelImage());
             String channelImagePlusCategorySlug = "";
             channelImagePlusCategorySlug = spotLightBlogDTOList.get(position).getId();

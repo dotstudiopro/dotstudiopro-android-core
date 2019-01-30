@@ -117,6 +117,10 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
     public boolean displayChannelPoster = false;
     public boolean hide3Dots = false;
 
+    public boolean isFeaturedCategoryNotPresent = false;
+
+    public boolean autoSlideFlag = true;
+
     public CategoriesPageComponent_V2(Activity mContext, LinearLayout mContainer) {
         activity = (Context) mContext;
         if(mContainer != null) {
@@ -519,7 +523,8 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
             slider1.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
             //slider1.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
             slider1.stopAutoCycle();
-            slider1.startAutoCycle(3000L, 3000L, true);
+            if(autoSlideFlag)
+                slider1.startAutoCycle(3000L, 3000L, true);
             llContainer.addView(slider1);
             slider1.setVisibility(View.VISIBLE);
 
@@ -567,7 +572,13 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug() != null &&
                     spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
@@ -892,7 +903,13 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug() != null &&
                     spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
@@ -920,7 +937,13 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug() != null &&
                     spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {
@@ -946,7 +969,13 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
         extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 10));
         container.addView(extraSpaceRL);
 
-        for(int i = 0; i < sliderCreationList.size(); i++) {
+        int startingIndex = 0;
+        if(isFeaturedCategoryNotPresent)
+            startingIndex = 1;
+        else
+            startingIndex = 0;
+        //for(int i = 1; i < sliderCreationList.size(); i++) {
+        for(int i = startingIndex; i < sliderCreationList.size(); i++) {
             SpotLightCategoriesDTO spotLightCategoriesDTO1 = (SpotLightCategoriesDTO) sliderCreationList.get(i);
             if (spotLightCategoriesDTO1.getCategorySlug() != null &&
                     spotLightCategoriesDTO1.getCategorySlug().equals("hero-showcase")) {

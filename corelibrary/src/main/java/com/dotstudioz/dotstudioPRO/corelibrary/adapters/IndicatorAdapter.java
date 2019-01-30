@@ -3,12 +3,18 @@ package com.dotstudioz.dotstudioPRO.corelibrary.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.dotstudioz.dotstudioPRO.corelibrary.R;
 import com.dotstudioz.dotstudioPRO.models.dto.IndicatorDTO;

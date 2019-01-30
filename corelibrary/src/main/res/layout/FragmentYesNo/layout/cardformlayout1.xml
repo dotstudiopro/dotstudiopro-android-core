@@ -245,7 +245,7 @@
                             android:inputType="textPersonName"
                             android:lines="1"
                             android:maxLines="1"
-
+                            android:nextFocusDown="@id/spinner1"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
                             android:paddingLeft="10dp"

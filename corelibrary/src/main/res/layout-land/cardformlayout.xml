@@ -184,7 +184,7 @@
                         android:lines="1"
                         android:maxLines="1"
                         android:paddingLeft="15dp"
-
+                        android:nextFocusDown="@id/spinner1"
                         />
 
                     <Spinner

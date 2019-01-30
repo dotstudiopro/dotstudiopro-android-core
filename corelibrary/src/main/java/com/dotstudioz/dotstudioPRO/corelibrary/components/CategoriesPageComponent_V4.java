@@ -553,6 +553,7 @@ public class CategoriesPageComponent_V4 implements
     }
 
     public boolean showIndicatorBackgroundColor = false;
+    public boolean isIndicatorBackgroundResource = false;
     public int indicatorBackgroundResource = 0;
     public SpotLightCategoriesDTO featuredSpotLightCategoriesDTOList = new SpotLightCategoriesDTO();
     public void createFeaturedSlider(SpotLightCategoriesDTO spotLightCategoriesDTO, DisplayMetrics displaymetrics) {
@@ -613,6 +614,7 @@ public class CategoriesPageComponent_V4 implements
             //Adding the carousal indicator just below the featured categories slider
             featuredSliderIndicatorComponent = new FeaturedSliderIndicatorComponent(activity);
             featuredSliderIndicatorComponent.showIndicatorBackgroundColor = showIndicatorBackgroundColor;
+            featuredSliderIndicatorComponent.isIndicatorBackgroundResource = isIndicatorBackgroundResource;
             featuredSliderIndicatorComponent.indicatorBackgroundResource = indicatorBackgroundResource;
             featuredSliderIndicatorComponent.setBackgroundColor(featuredSliderIndicator);
             featuredSliderIndicatorComponent.setActiveColor(activeFeaturedSliderIndicator);
@@ -846,10 +848,10 @@ public class CategoriesPageComponent_V4 implements
             adapter1 = new VideoOrChannelItemPagerAdapter_V1(activity);
             adapter1.spotLightCategoriesDTO = spotLightCategoriesDTO1;
             try {
-                Log.d("CategoriesPageComponent_V4", "spotLightCategoriesDTO1.getCategoryName()==>"+spotLightCategoriesDTO1.getCategoryName());
+                Log.d("CatPaComp", "spotLightCategoriesDTO1.getCategoryName()==>"+spotLightCategoriesDTO1.getCategoryName());
                 for(int i = 0; i < spotLightCategoriesDTO1.getVideoInfoDTOList().size(); i++) {
-                    Log.d("CategoriesPageComponent_V4", "i==>"+i);
-                    Log.d("CategoriesPageComponent_V4", "spotLightCategoriesDTO1.getVideoInfoDTOList().get(i).getThumb()==>"+spotLightCategoriesDTO1.getVideoInfoDTOList().get(i).getThumb());
+                    Log.d("CatPaComp", "i==>"+i);
+                    Log.d("CatPaComp", "spotLightCategoriesDTO1.getVideoInfoDTOList().get(i).getThumb()==>"+spotLightCategoriesDTO1.getVideoInfoDTOList().get(i).getThumb());
                 }
             } catch(Exception e) {
                 e.printStackTrace();
@@ -924,18 +926,18 @@ public class CategoriesPageComponent_V4 implements
             }
             @Override
             public void onPageScrollStateChanged(int state) {
-                Log.d("CategoriesPageComponent_V4", "onPageScrollStateChanged");
+                Log.d("CatPaComp", "onPageScrollStateChanged");
 
                 ApplicationConstants.hasScrolled = true;
 
                 if(state == ViewPager.SCROLL_STATE_DRAGGING) {
-                    Log.d("CategoriesPageComponent_V4", "onPageScrollStateChanged SCROLL_STATE_DRAGGING");
+                    Log.d("CatPaComp", "onPageScrollStateChanged SCROLL_STATE_DRAGGING");
                 } else if(state == ViewPager.SCROLL_STATE_SETTLING) {
-                    Log.d("CategoriesPageComponent_V4", "onPageScrollStateChanged SCROLL_STATE_SETTLING");
+                    Log.d("CatPaComp", "onPageScrollStateChanged SCROLL_STATE_SETTLING");
                     //turning of this flag as the scroll is ended and there was no event interception in MultiViwePager
                     ApplicationConstants.channelClickIntercepted = false;
                 } else {
-                    Log.d("CategoriesPageComponent_V4", "onPageScrollStateChanged LAST CONDITION");
+                    Log.d("CatPaComp", "onPageScrollStateChanged LAST CONDITION");
                 }
             }
         });
