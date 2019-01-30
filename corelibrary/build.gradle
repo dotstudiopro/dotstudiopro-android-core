@@ -121,6 +121,7 @@ dependencies {
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.3'
             }
 
+
 }
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
