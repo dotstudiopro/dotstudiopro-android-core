@@ -107,17 +107,17 @@ dependencies {
                 exclude group: 'com.android.support'
             }
     // Service Lib
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.2')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.3')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.3'
             }
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.3')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.4')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-analytics:1.0.2'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.2'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.3'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.3'
             }
 
