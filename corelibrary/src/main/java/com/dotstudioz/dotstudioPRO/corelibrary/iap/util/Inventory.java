@@ -15,6 +15,8 @@
 
 package com.dotstudioz.dotstudioPRO.corelibrary.iap.util;
 
+import com.dotstudioz.dotstudioPRO.models.dto.Purchase;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

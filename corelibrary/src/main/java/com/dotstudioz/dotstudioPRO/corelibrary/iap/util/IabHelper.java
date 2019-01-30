@@ -31,6 +31,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.vending.billing.IInAppBillingService;
+import com.dotstudioz.dotstudioPRO.models.dto.Purchase;
 
 import org.json.JSONException;
 
@@ -734,9 +735,9 @@ public class IabHelper {
         checkNotDisposed();
         checkSetupDone("consume");
 
-        if (!itemInfo.mItemType.equals(ITEM_TYPE_INAPP)) {
+        if (!itemInfo.getItemType().equals(ITEM_TYPE_INAPP)) {
             throw new IabException(IABHELPER_INVALID_CONSUMPTION,
-                    "Items of type '" + itemInfo.mItemType + "' can't be consumed.");
+                    "Items of type '" + itemInfo.getItemType() + "' can't be consumed.");
         }
 
         try {

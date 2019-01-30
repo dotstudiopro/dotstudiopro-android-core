@@ -12,7 +12,7 @@ import com.dotstudioz.dotstudioPRO.corelibrary.iap.util.IabBroadcastReceiver;
 import com.dotstudioz.dotstudioPRO.corelibrary.iap.util.IabHelper;
 import com.dotstudioz.dotstudioPRO.corelibrary.iap.util.IabResult;
 import com.dotstudioz.dotstudioPRO.corelibrary.iap.util.Inventory;
-import com.dotstudioz.dotstudioPRO.corelibrary.iap.util.Purchase;
+import com.dotstudioz.dotstudioPRO.models.dto.Purchase;
 
 public class IAPService implements IabBroadcastReceiver.IabBroadcastListener {
 
