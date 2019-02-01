@@ -61,6 +61,11 @@ public class FontsConstants {
     public static Typeface khandMediumFont;
     public static Typeface khandRegularFont;
     public static Typeface khandSemiBoldFont;
+    public static Typeface comfortaaBoldFont;
+    public static Typeface comfortaaRegularFont;
+    public static Typeface comfortaaLightFont;
+    public static Typeface comfortaaThinFont;
+    public static Typeface lilitaoneRegularFont;
 
     public static void initializeInstance(Context ctx) {
 
@@ -117,5 +122,10 @@ public class FontsConstants {
         khandMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-medium.ttf");
         khandRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-regular.ttf");
         khandSemiBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-semibold.ttf");
+        comfortaaBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-bold.ttf");
+        comfortaaRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-regular.ttf");
+        comfortaaLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-light.ttf");
+        comfortaaThinFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-thin.ttf");
+        lilitaoneRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "lilitaone-regular.ttf");
     }
 }
