@@ -124,6 +124,8 @@ public class CategoriesPageComponent_V4 implements
     public boolean hide3Dots = false;
     public boolean showMoreButton = false;
 
+    public boolean isLockToBeShown = false;
+
     public CategoriesPageComponent_V4(Activity mContext, LinearLayout mContainer) {
         activity = (Context) mContext;
         if(mContainer != null) {
@@ -893,6 +895,7 @@ public class CategoriesPageComponent_V4 implements
             adapter1.showActor = showActor;
             adapter1.setChildProgressColour(childProgressColour);
             adapter1.showParentChannelOnly = showParentChannelOnly;
+            adapter1.isLockToBeShown = isLockToBeShown;
             viewPager.setAdapter(adapter1);
         }
 
