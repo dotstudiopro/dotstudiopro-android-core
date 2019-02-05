@@ -193,13 +193,13 @@ public class VideoOrChannelItemPagerAdapter_V1 extends PagerAdapter {
 
                 //code to draw a lock on the thumbnail in case this channel is part of subscription
                 //do not delete this code, as this can be used in future to display the locks on the channel poster
-                /*try {
+                try {
                     if(spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).isProduct()) {
                         ((ImageView) itemView.findViewById(R.id.lockButton)).setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_lock).color(Color.parseColor("#ffffff")));
                     }
                 } catch(Exception e) {
                     e.printStackTrace();
-                }*/
+                }
 
 
                 String channelIdPlusCategorySlug = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId() + "|" + spotLightCategoriesDTO.getCategorySlug() + "|" + position;
@@ -335,8 +335,8 @@ public class VideoOrChannelItemPagerAdapter_V1 extends PagerAdapter {
                 //code to draw a lock on the thumbnail in case this channel is part of subscription
                 try {
                     if(spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).isProduct()) {
-                        //((ImageView) itemView.findViewById(R.id.lockButton)).setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_lock).color(Color.parseColor("#ffffff")));
-                        ((ImageView) itemView.findViewById(R.id.lockButton)).setImageDrawable(mContext.getResources().getDrawable(R.drawable.del_icon));
+                        ((ImageView) itemView.findViewById(R.id.lockButton)).setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_lock).color(Color.parseColor("#ffffff")));
+                        //((ImageView) itemView.findViewById(R.id.lockButton)).setImageDrawable(mContext.getResources().getDrawable(R.drawable.del_icon));
                     }
                 } catch(Exception e) {
                     e.printStackTrace();
