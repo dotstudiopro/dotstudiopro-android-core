@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 9
-        versionName "1.0.9"
+        versionCode 10
+        versionName "1.0.10"
     }
     buildTypes {
         release {
@@ -107,7 +107,7 @@ dependencies {
                 exclude group: 'com.android.support'
             }
     // Service Lib
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.7')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.8')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.5'
@@ -117,7 +117,7 @@ dependencies {
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-analytics:1.0.3'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.7'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.8'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.5'
             }
 
