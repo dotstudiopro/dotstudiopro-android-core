@@ -113,7 +113,7 @@ dependencies {
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.6'
             }
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.8')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.9')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-analytics:1.0.3'
