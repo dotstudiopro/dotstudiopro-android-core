@@ -175,9 +175,9 @@ public class CategorySliderForChannel_V1 extends BaseSliderView implements ViewP
         description.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
         Uri uri = Uri.parse(this.myImage);
-        //target.setImageURI(uri);
+        target.setImageURI(uri);
         //System.out.println("Uri.parse(this.myImage)==>"+this.myImage);
-        Picasso.with(getContext()).load(uri).into(target);
+        //Picasso.with(getContext()).load(uri).into(target);
 
         if(this.channelLogo != null) {
             Uri uri1 = Uri.parse(this.channelLogo);

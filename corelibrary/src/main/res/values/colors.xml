@@ -12,4 +12,6 @@
     <color name="text_color">#484b4d</color>
     <color name="btn_color">#69cac7</color>
 
+    <color name="transparent">#00000000</color>
+
 </resources>
