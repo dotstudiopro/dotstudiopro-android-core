@@ -199,9 +199,9 @@ public class EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1 extends BaseAdapte
             System.out.println("actualWidth==>"+actualWidth);
             System.out.println("widthOfProgress==>"+widthOfProgress);
             System.out.println("(((displayMetrics.widthPixels-(imageWidth+moreInfoImageView.getMeasuredWidth()+convertView.findViewById(R.id.seasonPlayImage).getMeasuredWidth()))*videoPausedPointPercentage)/100)==>"+(((displayMetrics.widthPixels-(imageWidth+moreInfoImageView.getMeasuredWidth()+convertView.findViewById(R.id.seasonPlayImage).getMeasuredWidth()))*videoPausedPointPercentage)/100));*/
-            Log.d("EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1", "widthOfProgress==>"+widthOfProgress);
-            Log.d("EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1", "widthOfProgress1==>"+widthOfProgress1);
-            Log.d("EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1", "heightForProgressBar==>"+heightForProgressBar);
+            Log.d("tag", "widthOfProgress==>"+widthOfProgress);
+            Log.d("tag", "widthOfProgress1==>"+widthOfProgress1);
+            Log.d("tag", "heightForProgressBar==>"+heightForProgressBar);
             convertView.findViewById(R.id.childProgressContainer).setLayoutParams(new LinearLayout.LayoutParams(widthOfProgress, heightForProgressBar));
             convertView.findViewById(R.id.childProgressContainer1).setLayoutParams(new LinearLayout.LayoutParams(widthOfProgress1, heightForProgressBar));
 
@@ -343,7 +343,7 @@ public class EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1 extends BaseAdapte
             imageString = imageString;
         } else if(!imageString.substring(0, 4).equals("http"))
             imageString = "https://images.dotstudiopro.com/"+imageString;
-        Log.d("EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1", "imageString==>"+imageString);
+        Log.d("tag", "imageString==>"+imageString);
         Uri uri1 = Uri.parse(imageString);
         SimpleDraweeView videoThumbnailImageView = (SimpleDraweeView) convertView.findViewById(R.id.videoThumbnailImageView);
         hierarchy = videoThumbnailImageView.getHierarchy();
@@ -355,7 +355,8 @@ public class EpisodesListAdapterWithoutPlayAndTwoLineTitle_V1 extends BaseAdapte
             //hidingg his only for decentric app, have to add a condition to show or not dynamically
             videoThumbnailImageView.setVisibility(View.GONE);
         }
-        Picasso.with(activity).load(uri1).into(videoThumbnailImageView);
+        //Picasso.with(activity).load(uri1).into(videoThumbnailImageView);
+        videoThumbnailImageView.setImageURI(uri1);
         //Glide.with(activity).load(uri1).placeholder(R.drawable.placeholder4).into(videoThumbnailImageView);
 
 
