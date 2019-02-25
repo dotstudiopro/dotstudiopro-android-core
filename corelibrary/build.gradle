@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 20
-        versionName "1.0.20"
+        versionCode 21
+        versionName "1.0.21"
     }
     buildTypes {
         release {
@@ -63,7 +63,8 @@ dependencies {
     implementation files('libs/httpclient-4.5.1.jar')
 
     //implementation 'com.auth0.android:lock:2.2.1'
-    implementation 'com.auth0.android:lock:2.11.1'
+    implementation 'com.auth0.android:lock:2.12.1'
+    //implementation 'com.auth0.android:lock:2.11.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.auth0:java-jwt:2.1.0'
     implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.9.4'
