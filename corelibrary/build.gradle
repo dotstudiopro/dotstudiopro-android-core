@@ -100,7 +100,7 @@ dependencies {
 
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-model:1.0.6')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-model:1.0.7')
             {
                 exclude group: 'com.android.support'
             }
@@ -109,18 +109,18 @@ dependencies {
                 exclude group: 'com.android.support'
             }
     // Service Lib
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.14')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.15')
             {
                 exclude group: 'com.android.support'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.6'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.7'
             }
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.10')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.11')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-analytics:1.0.3'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.14'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.6'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.15'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.7'
             }
 
 
