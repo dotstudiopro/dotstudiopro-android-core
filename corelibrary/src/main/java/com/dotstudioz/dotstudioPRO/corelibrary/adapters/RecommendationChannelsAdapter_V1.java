@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dotstudioz.dotstudioPRO.corelibrary.R;
+import com.dotstudioz.dotstudioPRO.models.dto.RecommendedItemDTO;
 import com.dotstudioz.dotstudioPRO.services.constants.ApplicationConstants;
 import com.dotstudioz.dotstudioPRO.corelibrary.constants.FontsConstants;
 import com.dotstudioz.dotstudioPRO.models.dto.Recommended4ItemPairDTO;
@@ -181,6 +182,9 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
             recommendedSeriesItemTV.setTextColor(seriesColour);
             recommendedSeriesItemTV.setIncludeFontPadding(false);
             //recommendedSeriesItemTV.setShadowLayer(2f, -1, 1, Color.BLACK);
+
+            recommendedItemPairDTOList.get(position).
+
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -520,6 +524,28 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
 
         return convertView;
+    }
+
+    //this is to add a lock button to the channel poster
+    public void addLockButton(RecommendedItemDTO categoriesDTO, RelativeLayout fl) {
+        if(categoriesDTO.isProduct()) {
+            ImageView lockButton = new ImageView(activity);
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            params.width = 57;
+            params.height = 80;
+            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+            lockButton.setLayoutParams(new RelativeLayout.LayoutParams(40, 40));
+            lockButton.setPadding(0, 0, 10, 10);
+            lockButton.setLayoutParams(params);
+
+            //lockButton.setImageDrawable(new IconDrawable(activity, FontAwesomeIcons.fa_lock).color(Color.parseColor("#ffffff")));
+            lockButton.setImageDrawable(activity.getResources().getDrawable(R.drawable.lock));
+
+            fl.addView(lockButton);
+
+        }
     }
 
     private void clickHandlerForChannelsImage(String tagSent) {
