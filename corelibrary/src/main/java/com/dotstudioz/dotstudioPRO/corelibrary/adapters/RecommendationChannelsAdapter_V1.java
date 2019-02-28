@@ -188,7 +188,7 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
             if(isLockToBeShown) {
                 //do not delete this, as this is used to display the lock image on the channel poster
-                addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO1(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemIV));
+                addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO1(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL));
             }
 
         } catch(Exception e) {
@@ -303,7 +303,7 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
                 //recommendedSeriesItemTV.setShadowLayer(2f, -1, 1, Color.BLACK);
                 if(isLockToBeShown) {
                     //do not delete this, as this is used to display the lock image on the channel poster
-                    addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO2(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemIV2));
+                    addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO2(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL2));
                 }
             } catch(Exception e) {
                 e.printStackTrace();
@@ -420,7 +420,7 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
             }
             if(isLockToBeShown) {
                 //do not delete this, as this is used to display the lock image on the channel poster
-                addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO3(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemIV3));
+                addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO3(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL3));
             }
         } else {
             convertView.findViewById(R.id.recommendedItemRL3).setVisibility(View.INVISIBLE);
@@ -532,7 +532,7 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
                 if(isLockToBeShown) {
                     //do not delete this, as this is used to display the lock image on the channel poster
-                    addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO4(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemIV4));
+                    addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO4(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL4));
                 }
             } catch(Exception e) {
                 e.printStackTrace();
