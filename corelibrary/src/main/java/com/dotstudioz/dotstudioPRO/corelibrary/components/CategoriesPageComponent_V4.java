@@ -374,6 +374,8 @@ public class CategoriesPageComponent_V4 implements
         categorySliderForChannel_v1.featuredTitleColour = featuredTitleColour;
         categorySliderForChannel_v1.showWatchVideoButton = showWatchVidBut;
         categorySliderForChannel_v1.displayMetrics = genericdisplaymetrics;
+        categorySliderForChannel_v1.isLockToBeShown = isLockToBeShown;
+        categorySliderForChannel_v1.isProduct = spotLightChannelDTO.isProduct();
         /*if(spotLightChannelDTO.isSeasonsPresent())
             categorySliderForChannel_v1.showAddToMyListButton = false;
         else*/

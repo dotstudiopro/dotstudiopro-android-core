@@ -9,6 +9,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -62,6 +63,9 @@ public class CategorySliderForChannel_V1 extends BaseSliderView implements ViewP
 
     public DisplayMetrics displayMetrics;
 
+    public boolean isProduct = false;
+    public boolean isLockToBeShown = false;
+
     @Override
     public View getView() {
         View v = LayoutInflater.from(getContext()).inflate(R.layout.slider_render_channel,null);
@@ -111,6 +115,14 @@ public class CategorySliderForChannel_V1 extends BaseSliderView implements ViewP
             videoTitleTextView.setPadding(0, 0, 0, 5);
         }
         videoActorsTextView.setVisibility(featuredDescVisibility);
+
+        try {
+            if(isLockToBeShown && isProduct) {
+                ((ImageView) v.findViewById(R.id.lockButton)).setImageDrawable(mContext.getResources().getDrawable(R.drawable.lock));
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
         //AddToMyList button event handler and showing flag
         Button addToMyListButton = (Button) v.findViewById(R.id.addToMyListButton);
