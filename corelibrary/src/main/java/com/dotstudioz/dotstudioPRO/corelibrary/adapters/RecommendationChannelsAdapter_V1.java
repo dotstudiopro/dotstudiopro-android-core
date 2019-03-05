@@ -11,11 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dotstudioz.dotstudioPRO.corelibrary.R;
+import com.dotstudioz.dotstudioPRO.models.dto.RecommendedItemDTO;
 import com.dotstudioz.dotstudioPRO.services.constants.ApplicationConstants;
 import com.dotstudioz.dotstudioPRO.corelibrary.constants.FontsConstants;
 import com.dotstudioz.dotstudioPRO.models.dto.Recommended4ItemPairDTO;
@@ -45,6 +47,8 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
     private boolean isCustomFontEnabledForVideoTitle = false;
     private Typeface customFontForVideoTitle;
+
+    public boolean isLockToBeShown = false;
 
     public IRecommendationAdapter iRecommendationAdapter;
 
@@ -181,6 +185,12 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
             recommendedSeriesItemTV.setTextColor(seriesColour);
             recommendedSeriesItemTV.setIncludeFontPadding(false);
             //recommendedSeriesItemTV.setShadowLayer(2f, -1, 1, Color.BLACK);
+
+            if(isLockToBeShown) {
+                //do not delete this, as this is used to display the lock image on the channel poster
+                addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO1(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL));
+            }
+
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -291,6 +301,10 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
                 recommendedSeriesItemTV.setTextColor(seriesColour);
                 recommendedSeriesItemTV.setIncludeFontPadding(false);
                 //recommendedSeriesItemTV.setShadowLayer(2f, -1, 1, Color.BLACK);
+                if(isLockToBeShown) {
+                    //do not delete this, as this is used to display the lock image on the channel poster
+                    addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO2(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL2));
+                }
             } catch(Exception e) {
                 e.printStackTrace();
             }
@@ -404,6 +418,10 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
             } catch(Exception e) {
                 e.printStackTrace();
             }
+            if(isLockToBeShown) {
+                //do not delete this, as this is used to display the lock image on the channel poster
+                addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO3(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL3));
+            }
         } else {
             convertView.findViewById(R.id.recommendedItemRL3).setVisibility(View.INVISIBLE);
         }
@@ -511,6 +529,11 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
                 recommendedSeriesItemTV.setTextColor(seriesColour);
                 recommendedSeriesItemTV.setIncludeFontPadding(false);
                 //recommendedSeriesItemTV.setShadowLayer(2f, -1, 1, Color.BLACK);
+
+                if(isLockToBeShown) {
+                    //do not delete this, as this is used to display the lock image on the channel poster
+                    addLockButton(recommendedItemPairDTOList.get(position).getRecommendedItemDTO4(), (RelativeLayout)convertView.findViewById(R.id.recommendedItemRL4));
+                }
             } catch(Exception e) {
                 e.printStackTrace();
             }
@@ -520,6 +543,28 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
 
         return convertView;
+    }
+
+    //this is to add a lock button to the channel poster
+    public void addLockButton(RecommendedItemDTO categoriesDTO, RelativeLayout fl) {
+        if(categoriesDTO.isProduct()) {
+            ImageView lockButton = new ImageView(activity);
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            params.width = 57;
+            params.height = 80;
+            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+            lockButton.setLayoutParams(new RelativeLayout.LayoutParams(40, 40));
+            lockButton.setPadding(0, 0, 10, 10);
+            lockButton.setLayoutParams(params);
+
+            //lockButton.setImageDrawable(new IconDrawable(activity, FontAwesomeIcons.fa_lock).color(Color.parseColor("#ffffff")));
+            lockButton.setImageDrawable(activity.getResources().getDrawable(R.drawable.lock));
+
+            fl.addView(lockButton);
+
+        }
     }
 
     private void clickHandlerForChannelsImage(String tagSent) {
