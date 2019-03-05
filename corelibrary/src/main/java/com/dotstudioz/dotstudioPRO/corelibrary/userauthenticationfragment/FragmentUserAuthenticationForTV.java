@@ -3,8 +3,10 @@ package com.dotstudioz.dotstudioPRO.corelibrary.userauthenticationfragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -16,10 +18,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dotstudioz.dotstudioPRO.corelibrary.R;
 import com.dotstudioz.dotstudioPRO.corelibrary.constants.FontsConstants;
+import com.dotstudioz.dotstudioPRO.corelibrary.util.TransparentProgressDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,7 +84,7 @@ private boolean isFirstTimeLaunch;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            Log.d("FragmentUserAuthenticationForTV","onCreate");
+            Log.d("","onCreate");
             Bundle args = getArguments();
             if (args != null) {
                 imageResourceBackground = args.getInt(KEY_IMAGE_RESOURCE_BACKGROUND);
@@ -100,7 +104,7 @@ private boolean isFirstTimeLaunch;
     @Override
     public void onResume() {
         super.onResume();
-        Log.d("FragmentUserAuthenticationForTV","onResume");
+        Log.d("","onResume");
         final View firstLayout = view.findViewById(R.id.loginfirstLayout);
         final View secondLayout = view.findViewById(R.id.loginsecondLayout);
 
@@ -132,7 +136,7 @@ private boolean isFirstTimeLaunch;
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("FragmentUserAuthenticationForTV","onDestroy");
+        Log.d("","onDestroy");
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.remove(thisFragment);
@@ -143,7 +147,7 @@ private boolean isFirstTimeLaunch;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("FragmentUserAuthenticationForTV","onCreateView");
+        Log.d("","onCreateView");
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_user_authentication, container, false);
          view = inflater.inflate(R.layout.fragment_user_authentication_tv, container, false);
@@ -293,12 +297,14 @@ private boolean isFirstTimeLaunch;
                         "mohsin",
                         "57e9fb9644afa8c50570d38dab7b5fe1c094c9b5"
                 );*/
+
                 try {
                     username = usernameEditText.getText().toString();
                     password = passwordEditText.getText().toString();
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
+                showProgress("");
                 UsernamePasswordAuth0API.getInstance(getActivity()).authenticateUser(
                         auth0Key,
                         auth0Domain,
@@ -397,6 +403,99 @@ private boolean isFirstTimeLaunch;
         void skipClickHandlerFragmentUserAuthentication();
         void facebookUserAuthentication();
         void deviceCodeAuthentication();
+    }
+
+
+
+    public boolean isProgressAlreadyVisible = false;
+
+    public void hidePDialog() {
+        /*super.hidePDialog();
+        isProgressAlreadyVisible = false;*/
+        hidePDialog(view.findViewById(R.id.loadingPanel));
+    }
+
+
+    public void hidePDialog(View view) {
+        hidePDialogInFragment(view);
+        isProgressAlreadyVisible = false;
+    }
+
+
+    public void showProgress(String msg) {
+        /*if (!isProgressAlreadyVisible) {
+            super.showProgress(msg);
+            isProgressAlreadyVisible = true;
+        }*/
+        showProgress(view.findViewById(R.id.loadingPanel));
+    }
+
+
+
+
+    public void showProgress(View view) {
+        if (!isProgressAlreadyVisible) {
+            showProgressInFragment(view);
+            isProgressAlreadyVisible = true;
+        }
+    }
+
+
+    private ProgressDialog pDialog;
+    public static String loadingMsg = "Loading...";
+    private ProgressBar loadingProgressBar;
+    private TransparentProgressDialog pd;
+
+    protected void showProgressInFragment(String msg) {
+        if (pDialog != null && pDialog.isShowing())
+            hidePDialogInFragment();
+
+        //pDialog = ProgressDialog.show(this, getResources().getString(R.string.app_name), msg);
+        /*pDialog = ProgressDialog.show(this, "", msg);
+        pDialog.setCancelable(false);
+        pDialog.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
+        pDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        pDialog.show();*/
+
+        /*pd = new TransparentProgressDialog(this, R.drawable.spinner_vikings);
+        if (pd != null && pd.isShowing())
+            hidePDialog();
+        pd.show();*/
+    }
+
+    protected void hidePDialogInFragment() {
+        /*if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }*/
+        if (pd != null) {
+            pd.dismiss();
+            pd = null;
+        }
+    }
+
+
+
+
+
+
+
+    protected void showProgressInFragment(View view) {
+        if (pDialog != null && pDialog.isShowing())
+            hidePDialog(view);
+
+        if(view != null) {
+            loadingProgressBar = (ProgressBar) view.findViewById(R.id.loadingPanelProgressBar);
+            loadingProgressBar.getIndeterminateDrawable().setColorFilter(0xFFF00886, PorterDuff.Mode.MULTIPLY);
+            view.setVisibility(View.VISIBLE);
+        }
+
+
+    }
+
+    protected void hidePDialogInFragment(View view) {
+        if(view != null)
+            view.setVisibility(View.GONE);
     }
 
 }
