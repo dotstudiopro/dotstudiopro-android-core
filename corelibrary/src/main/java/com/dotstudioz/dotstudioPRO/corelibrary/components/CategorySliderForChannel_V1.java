@@ -193,7 +193,8 @@ public class CategorySliderForChannel_V1 extends BaseSliderView implements ViewP
 
         if(this.channelLogo != null) {
             Uri uri1 = Uri.parse(this.channelLogo);
-            Picasso.with(getContext()).load(uri1).into(target1);
+            //Picasso.with(getContext()).load(uri1).into(target1);
+            target1.setImageURI(uri1);
         } else {
             if(this.channelTitle != null) {
                 channelTitleTV.setText(this.channelTitle);
