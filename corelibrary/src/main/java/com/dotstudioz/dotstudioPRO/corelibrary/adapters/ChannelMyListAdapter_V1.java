@@ -115,12 +115,25 @@ public class ChannelMyListAdapter_V1 extends BaseAdapter {
                 String imageString = "";
                 try {
                     //imageString = spotLightCategoriesDTOList.get((position*2)).getSpotLightChannelDTOList().get(0).getImage();
-                    imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO1().getSpotlightPoster();
+                    if(channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO1().getParentChannelMyListDTO().getSpotlightPoster() != null &&
+                            channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO1().getParentChannelMyListDTO().getSpotlightPoster().length() > 0) {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO1().getParentChannelMyListDTO().getSpotlightPoster();
+                    } else {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO1().getSpotlightPoster();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
+
+                try {
+                    if (imageString.contains("image.dotstudiopro.com")) {
+                        imageString = imageString + "/" + imageWidth + "/" + imageHeight;
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
 
                 String imageURLAddress = imageString;// + "/" + imageWidth + "/" + imageHeight;
                 Uri uri = Uri.parse(imageURLAddress);
@@ -192,12 +205,26 @@ public class ChannelMyListAdapter_V1 extends BaseAdapter {
                 String imageString = "";
                 try {
                     //imageString = spotLightCategoriesDTOList.get((position*2)).getSpotLightChannelDTOList().get(0).getImage();
-                    imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO2().getSpotlightPoster();
+                    //imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO2().getSpotlightPoster();
+                    if(channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO2().getParentChannelMyListDTO().getSpotlightPoster() != null &&
+                            channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO2().getParentChannelMyListDTO().getSpotlightPoster().length() > 0) {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO2().getParentChannelMyListDTO().getSpotlightPoster();
+                    } else {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO2().getSpotlightPoster();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
+
+                try {
+                    if (imageString.contains("image.dotstudiopro.com")) {
+                        imageString = imageString + "/" + imageWidth + "/" + imageHeight;
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
 
                 String imageURLAddress = imageString;// + "/" + imageWidth + "/" + imageHeight;
                 Uri uri = Uri.parse(imageURLAddress);
@@ -269,12 +296,26 @@ public class ChannelMyListAdapter_V1 extends BaseAdapter {
                 String imageString = "";
                 try {
                     //imageString = spotLightCategoriesDTOList.get((position*2)).getSpotLightChannelDTOList().get(0).getImage();
-                    imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO3().getSpotlightPoster();
+                    //imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO3().getSpotlightPoster();
+                    if(channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO3().getParentChannelMyListDTO().getSpotlightPoster() != null &&
+                            channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO3().getParentChannelMyListDTO().getSpotlightPoster().length() > 0) {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO3().getParentChannelMyListDTO().getSpotlightPoster();
+                    } else {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO3().getSpotlightPoster();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
+
+                try {
+                    if (imageString.contains("image.dotstudiopro.com")) {
+                        imageString = imageString + "/" + imageWidth + "/" + imageHeight;
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
 
                 String imageURLAddress = imageString;// + "/" + imageWidth + "/" + imageHeight;
                 Uri uri = Uri.parse(imageURLAddress);
@@ -347,12 +388,26 @@ public class ChannelMyListAdapter_V1 extends BaseAdapter {
                 String imageString = "";
                 try {
                     //imageString = spotLightCategoriesDTOList.get((position*2)).getSpotLightChannelDTOList().get(0).getImage();
-                    imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO4().getSpotlightPoster();
+                    //imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO4().getSpotlightPoster();
+                    if(channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO4().getParentChannelMyListDTO().getSpotlightPoster() != null &&
+                            channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO4().getParentChannelMyListDTO().getSpotlightPoster().length() > 0) {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO4().getParentChannelMyListDTO().getSpotlightPoster();
+                    } else {
+                        imageString = channelsMyListDTOForMyListArrayList.get(position).getChannelMyListDTO4().getSpotlightPoster();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
+
+                try {
+                    if (imageString.contains("image.dotstudiopro.com")) {
+                        imageString = imageString + "/" + imageWidth + "/" + imageHeight;
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
 
                 String imageURLAddress = imageString;// + "/" + imageWidth + "/" + imageHeight;
                 Uri uri = Uri.parse(imageURLAddress);
