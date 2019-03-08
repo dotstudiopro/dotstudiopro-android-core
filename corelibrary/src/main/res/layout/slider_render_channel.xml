@@ -133,7 +133,6 @@
             android:id="@+id/channelLogoImageView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            fresco:placeholderImage="@drawable/placeholder4_black"
             android:layout_gravity="center"
             android:layout_centerInParent="true"
             fresco:actualImageScaleType="fitCenter"
@@ -142,6 +141,7 @@
             android:padding="10dp"
             android:visibility="visible"
             />
+        <!--fresco:placeholderImage="@drawable/placeholder4_black"-->
         <!--android:background="@drawable/channel_logo_background"-->
         <TextView
             android:id="@+id/channelTitleTV"
