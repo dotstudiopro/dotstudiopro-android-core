@@ -207,7 +207,6 @@ private boolean isFirstTimeLaunch;
 
         }
 
-
 //        view.findViewById(R.id.auth_description_layout2).setVisibility(View.GONE);
 //        view.findViewById(R.id.auth_description_layout1).setVisibility(View.GONE);
         if(firstLayout.getVisibility() == View.VISIBLE)
@@ -285,7 +284,7 @@ private boolean isFirstTimeLaunch;
         });
 
         ((ImageView)view.findViewById(R.id.companyLogoImageView)).setImageResource(imageResourceLogo);
-         view.findViewById(R.id.login_root_view).setBackgroundResource(imageResourceBackground);
+       //  view.findViewById(R.id.login_root_view).setBackgroundResource(imageResourceBackground);
 
         view.findViewById(R.id.submitButton).setOnClickListener(new View.OnClickListener() {
             @Override

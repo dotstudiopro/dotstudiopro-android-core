@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/revry_login_bg"
     android:id="@+id/login_root_view"
-    tools:context="com.dotstudioz.dotstudioPRO.corelibrary.userauthenticationfragment.FragmentUserAuthentication">
+    tools:context="com.dotstudioz.dotstudioPRO.corelibrary.userauthenticationfragment.FragmentUserAuthenticationForTV">
 
     <LinearLayout
         android:layout_width="match_parent"
