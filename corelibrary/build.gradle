@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 45
-        versionName "1.0.45"
+        versionCode 46
+        versionName "1.0.46"
     }
     buildTypes {
         release {
@@ -109,17 +109,17 @@ dependencies {
                 exclude group: 'com.android.support'
             }
     // Service Lib
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.25')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.26')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.10'
             }
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.26')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.27')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-analytics:1.0.6'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.25'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.26'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.10'
             }
 
