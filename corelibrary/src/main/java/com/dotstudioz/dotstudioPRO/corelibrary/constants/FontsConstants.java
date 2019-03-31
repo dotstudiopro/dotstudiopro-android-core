@@ -66,6 +66,8 @@ public class FontsConstants {
     public static Typeface comfortaaLightFont;
     public static Typeface comfortaaThinFont;
     public static Typeface lilitaoneRegularFont;
+    public static Typeface arimoRegularFont;
+    public static Typeface arimoBoldFont;
 
     public static void initializeInstance(Context ctx) {
 
@@ -127,5 +129,7 @@ public class FontsConstants {
         comfortaaLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-light.ttf");
         comfortaaThinFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-thin.ttf");
         lilitaoneRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "lilitaone-regular.ttf");
+        arimoBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "arimo-bold.ttf");
+        arimoRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "arimo-regular.ttf");
     }
 }
