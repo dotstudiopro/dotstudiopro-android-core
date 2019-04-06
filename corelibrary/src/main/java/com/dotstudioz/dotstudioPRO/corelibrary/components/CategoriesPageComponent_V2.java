@@ -105,6 +105,14 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
     public int categoryNameTVFontColor = Color.parseColor("#ffffff");
     public int viewAllIVColor = Color.parseColor("#eeeeee");
 
+    public boolean showViewAllText = false;
+    public Typeface showViewAllTextTypeFace = FontsConstants.alwaysForeverBold;
+    public boolean isShowViewAllTextCustomFont = false;
+    public boolean isShowViewAllTextFontSize = false;
+    public int showViewAllTextFontSize;
+    public boolean isShowViewAllTextFontColor = false;
+    public int showViewAllTextFontColor = Color.parseColor("#ffffff");
+
     public int featuredTitleColour = Color.parseColor("#eeeeee");
     public int featuredSliderIndicator = Color.parseColor("#eeeeee");
     public int activeFeaturedSliderIndicator = Color.parseColor("#6dec68");
@@ -885,6 +893,29 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
             rl.addView(viewAllIV1);
             rl.addView(viewAllIV2);
             rl.addView(viewAllIV3);
+        }
+
+        if(showViewAllText) {
+            TextView showViewAllTextTV = new TextView(activity);
+            showViewAllTextTV.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            showViewAllTextTV.setText("View All");
+            if(isShowViewAllTextCustomFont)
+                showViewAllTextTV.setTypeface(showViewAllTextTypeFace);
+            showViewAllTextTV.setPadding(0, 0, 15, 0);
+            if(isShowViewAllTextFontSize)
+                showViewAllTextTV.setTextSize(showViewAllTextFontSize);
+            showViewAllTextTV.setAllCaps(false);
+            showViewAllTextTV.setGravity(Gravity.RIGHT);
+            if(isShowViewAllTextFontColor)
+                showViewAllTextTV.setTextColor(showViewAllTextFontColor);
+            showViewAllTextTV.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    iCategoriesPageComponent_V2.seeAllChannelsClickHandlerHelper(v);
+                }
+            });
+
+            rl.addView(showViewAllTextTV);
         }
 
         container.addView(rl);
