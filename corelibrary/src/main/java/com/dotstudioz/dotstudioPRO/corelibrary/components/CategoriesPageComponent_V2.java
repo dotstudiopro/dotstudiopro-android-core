@@ -895,27 +895,32 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
             rl.addView(viewAllIV3);
         }
 
-        if(showViewAllText) {
-            TextView showViewAllTextTV = new TextView(activity);
-            showViewAllTextTV.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            showViewAllTextTV.setText("View All");
-            if(isShowViewAllTextCustomFont)
-                showViewAllTextTV.setTypeface(showViewAllTextTypeFace);
-            showViewAllTextTV.setPadding(0, 0, 15, 0);
-            if(isShowViewAllTextFontSize)
-                showViewAllTextTV.setTextSize(showViewAllTextFontSize);
-            showViewAllTextTV.setAllCaps(false);
-            showViewAllTextTV.setGravity(Gravity.RIGHT);
-            if(isShowViewAllTextFontColor)
-                showViewAllTextTV.setTextColor(showViewAllTextFontColor);
-            showViewAllTextTV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    iCategoriesPageComponent_V2.seeAllChannelsClickHandlerHelper(v);
-                }
-            });
+        try {
+            if (showViewAllText) {
+                TextView showViewAllTextTV = new TextView(activity);
+                showViewAllTextTV.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                showViewAllTextTV.setText("View All");
+                showViewAllTextTV.setTag(spotLightCategoriesDTO1.getCategorySlug());
+                if (isShowViewAllTextCustomFont)
+                    showViewAllTextTV.setTypeface(showViewAllTextTypeFace);
+                showViewAllTextTV.setPadding(0, 0, 15, 0);
+                if (isShowViewAllTextFontSize)
+                    showViewAllTextTV.setTextSize(showViewAllTextFontSize);
+                showViewAllTextTV.setAllCaps(false);
+                showViewAllTextTV.setGravity(Gravity.RIGHT);
+                if (isShowViewAllTextFontColor)
+                    showViewAllTextTV.setTextColor(showViewAllTextFontColor);
+                showViewAllTextTV.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        iCategoriesPageComponent_V2.seeAllChannelsClickHandlerHelper(v);
+                    }
+                });
 
-            rl.addView(showViewAllTextTV);
+                rl.addView(showViewAllTextTV);
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
         }
 
         container.addView(rl);
