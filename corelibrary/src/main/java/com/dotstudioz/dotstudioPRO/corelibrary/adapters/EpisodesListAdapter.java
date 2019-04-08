@@ -243,7 +243,8 @@ public class EpisodesListAdapter extends BaseAdapter {
         //hierarchy.setPlaceholderImage(R.drawable.placeholder4);
 
         videoThumbnailImageView.setVisibility(View.VISIBLE);
-        Picasso.with(activity).load(uri1).into(videoThumbnailImageView);
+        videoThumbnailImageView.setImageURI(uri1);
+        //Picasso.with(activity).load(uri1).into(videoThumbnailImageView);
         //Glide.with(activity).load(uri1).placeholder(R.drawable.placeholder4).into(videoThumbnailImageView);
 
 

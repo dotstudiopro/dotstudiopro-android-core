@@ -324,7 +324,8 @@ public class EpisodesWithoutThumbnailsListAdapter_V1 extends BaseAdapter {
         //videoThumbnailImageView.setVisibility(View.VISIBLE);
         //hidingg his only for decentric app, have to add a condition to show or not dynamically
         videoThumbnailImageView.setVisibility(View.GONE);
-        Picasso.with(activity).load(uri1).into(videoThumbnailImageView);
+        videoThumbnailImageView.setImageURI(uri1);
+        //Picasso.with(activity).load(uri1).into(videoThumbnailImageView);
         //Glide.with(activity).load(uri1).placeholder(R.drawable.placeholder4).into(videoThumbnailImageView);
 
 
