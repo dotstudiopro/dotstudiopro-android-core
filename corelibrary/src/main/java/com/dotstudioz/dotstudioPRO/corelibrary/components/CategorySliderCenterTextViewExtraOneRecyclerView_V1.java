@@ -182,9 +182,9 @@ public class CategorySliderCenterTextViewExtraOneRecyclerView_V1 extends BaseSli
         description.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
         Uri uri = Uri.parse(this.myImage);
-        //target.setImageURI(uri);
+        target.setImageURI(uri);
         //System.out.println("Uri.parse(this.myImage)==>"+this.myImage);
-        Picasso.with(getContext()).load(uri).into(target);
+        //Picasso.with(getContext()).load(uri).into(target);
 
         iCategorySliderCenterTextViewExtraOne.selectedSliderIndex(indexOfImage);
 
