@@ -213,7 +213,8 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                     //System.out.println("ImageData:"+categoriesDTO.getChannelSpotlightImage());
 
                     String imageString2 = "";
-                    try {
+                    //we will be always using the poster of a category from now on
+                    /*try {
                         if (spotLightCategoriesDTOList.get(position).getSpotLightCategoriesDTO2().getSpotLightChannelDTOList() != null &&
                                 spotLightCategoriesDTOList.get(position).getSpotLightCategoriesDTO2().getSpotLightChannelDTOList().size() == 0) {
                             imageString2 = spotLightCategoriesDTOList.get(position).getSpotLightCategoriesDTO2().getPoster();
@@ -222,6 +223,11 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                             imageString2 = spotLightCategoriesDTOList.get(position).getSpotLightCategoriesDTO2().getSpotLightChannelDTOList().get(0).getPoster();
                             Log.d("GenreAdapter", "imageString2==>" + imageString2);
                         }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }*/
+                    try {
+                        imageString2 = spotLightCategoriesDTOList.get(position).getSpotLightCategoriesDTO2().getPoster();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
