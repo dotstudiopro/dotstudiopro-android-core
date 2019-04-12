@@ -52,6 +52,9 @@ public class CategorySliderCenterTextViewExtraOne_V1 extends BaseSliderView impl
     public String descToPass = null;
     public String myImageToPass = null;
 
+    public boolean isChannel = false;
+    public String channelID = "";
+
     @Override
     public View getView() {
         View v = LayoutInflater.from(getContext()).inflate(R.layout.slider_render_center_text,null);

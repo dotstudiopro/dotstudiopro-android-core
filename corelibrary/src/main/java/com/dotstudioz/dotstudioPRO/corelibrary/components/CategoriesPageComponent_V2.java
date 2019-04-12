@@ -322,6 +322,43 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
         sliderShow.addSlider(categorySliderCenterTextView);
     }
 
+    private void setImageToSliderAndCenterTextExtraOne(SliderLayout sliderShow, SpotLightChannelDTO spotLightChannelDTO, String imageString, String categoryString, int index, int activeColor, int inActiveColor, int featuredTitleColour, boolean showWatchVidBut) {
+        CategorySliderCenterTextViewExtraOne_V1 categorySliderCenterTextView = new CategorySliderCenterTextViewExtraOne_V1(activity, this);
+        //imageString = "http://image.dotstudiopro.com/55c8e76397f8154b12b8c5b9";
+        categorySliderCenterTextView.isChannel = true;
+        if(spotLightChannelDTO.getSeasonsList() != null && spotLightChannelDTO.getSeasonsList().size() > 0) {
+            categorySliderCenterTextView.channelID = spotLightChannelDTO.getSeasonsList().get(0).getId();
+        } else {
+            categorySliderCenterTextView.channelID = spotLightChannelDTO.getId();
+        }
+        categorySliderCenterTextView.description(categoryString);
+        categorySliderCenterTextView.setVideoDescription("");
+
+        categorySliderCenterTextView.setVideoDescription("");
+
+        categorySliderCenterTextView.setIndexOfImage(index);
+        categorySliderCenterTextView.setFeaturedTitleVisibility(featuredTitleFontVisibility);
+        categorySliderCenterTextView.setVideoTitle("");
+        categorySliderCenterTextView.setFeaturedDescVisibility(featuredDescFontVisibility);
+        categorySliderCenterTextView.setVideoActors("");
+        categorySliderCenterTextView.setFeaturedTag(spotLightChannelDTO.getSlug());
+        categorySliderCenterTextView.setCustomFontEnabledForVideoTitle(customFontEnabledForVideoTitle);
+        categorySliderCenterTextView.setCustomFontForVideoTitle(customFontForVideoTitle);
+        categorySliderCenterTextView.setCustomFontEnabledForVideoDescription(customFontEnabledForVideoDescription);
+        categorySliderCenterTextView.setCustomFontForVideoDescription(customFontForVideoDescription);
+        categorySliderCenterTextView.activeColor = activeColor;
+        categorySliderCenterTextView.inActiveColor = inActiveColor;
+        categorySliderCenterTextView.featuredTitleColour = featuredTitleColour;
+        categorySliderCenterTextView.showWatchVideoButton = showWatchVidBut;
+
+        String imageString1 = imageString;
+        imageString1 = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString1);
+
+        categorySliderCenterTextView.myImage(imageString1);
+        categorySliderCenterTextView.setOnSliderClickListener((BaseSliderView.OnSliderClickListener)activity);
+        sliderShow.addSlider(categorySliderCenterTextView);
+    }
+
     public void addLiveScheduleView(DisplayMetrics displayMetrics, LiveScheduleDataDTO liveScheduleDataDTO) {
         //container.addView(getLiveSchduleView(displayMetrics, liveScheduleDataDTO));
         getLiveSchduleView(displayMetrics, liveScheduleDataDTO);
@@ -553,6 +590,66 @@ public class CategoriesPageComponent_V2 implements CategorySliderCenterTextViewE
             featuredSliderIndicatorComponent.setBackgroundColor(featuredSliderIndicator);
             featuredSliderIndicatorComponent.setActiveColor(activeFeaturedSliderIndicator);
             featuredSliderIndicatorComponent.setNumberOfIndicators(spotLightCategoriesDTO.getVideoInfoDTOList().size());
+            try {
+                container.addView(featuredSliderIndicatorComponent.getFeaturedIndicatorComponent());
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        } else if (spotLightCategoriesDTO.getSpotLightChannelDTOList().size() > 0) {
+            int height = displaymetrics.heightPixels;
+            int width = displaymetrics.widthPixels;
+
+            LinearLayout llContainer = new LinearLayout(activity);
+            llContainer.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            llContainer.setOrientation(LinearLayout.HORIZONTAL);
+
+            SliderLayout slider1 = new SliderLayout(activity);
+            slider1.setAlwaysDrawnWithCacheEnabled(true);
+
+            int imageHeight = 0;
+            if (activity.getResources().getConfiguration().orientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT ||
+                    activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                //imageHeight = (width / 2);
+                imageHeight = ((width * 9) / 16);
+            } else if (activity.getResources().getConfiguration().orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE ||
+                    activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                //imageHeight = height;
+                imageHeight = ((width * 9) / 16);
+            }
+            LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, imageHeight, 1f);
+            slider1.setLayoutParams(params1);
+            for (int i = 0; i < spotLightCategoriesDTO.getSpotLightChannelDTOList().size(); i++) {
+                //for (int i = 0; i < ((spotLightCategoriesDTO.getVideoInfoDTOList().size()>4)?5:spotLightCategoriesDTO.getVideoInfoDTOList().size()); i++) {
+                setImageToSliderAndCenterTextExtraOne(slider1, spotLightCategoriesDTO.getSpotLightChannelDTOList().get(i), spotLightCategoriesDTO.getSpotLightChannelDTOList().get(i).getPoster() + "/" + width + "/" + imageHeight, spotLightCategoriesDTO.getCategoryName(), i, activeFeaturedSliderIndicator, featuredSliderIndicator, featuredTitleColour, showWatchVideoButton);
+            }
+
+            //slider1.setDuration(10000L);
+            slider1.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
+            //slider1.setPresetTransformer(SliderLayout.Transformer.Accordion);
+            slider1.setPresetTransformer(SliderLayout.Transformer.Default);
+            slider1.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
+            //slider1.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+            slider1.stopAutoCycle();
+            slider1.startAutoCycle(3000L, 3000L, true);
+            llContainer.addView(slider1);
+            slider1.setVisibility(View.VISIBLE);
+
+            if(ApplicationConstants.TOP_PADDING_FOR_MAIN_ACTION_BAR == 0)
+                ApplicationConstants.TOP_PADDING_FOR_MAIN_ACTION_BAR = ((ApplicationConstants.BOTTOM_PADDING_FOR_TAB_BAR*3)/4) + (((((ApplicationConstants.BOTTOM_PADDING_FOR_TAB_BAR*3)/4))*14)/100);
+
+            RelativeLayout extraSpaceRL = new RelativeLayout(activity);
+            extraSpaceRL.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, (ApplicationConstants.TOP_PADDING_FOR_MAIN_ACTION_BAR>0)?ApplicationConstants.TOP_PADDING_FOR_MAIN_ACTION_BAR:ApplicationConstants.TEXT_INPUT_HEIGHT));
+            container.addView(extraSpaceRL);
+
+            container.addView(llContainer);
+
+            //Adding the carousal indicator just below the featured categories slider
+            featuredSliderIndicatorComponent = new FeaturedSliderIndicatorComponent(activity);
+            featuredSliderIndicatorComponent.showIndicatorBackgroundColor = showIndicatorBackgroundColor;
+            featuredSliderIndicatorComponent.indicatorBackgroundResource = indicatorBackgroundResource;
+            featuredSliderIndicatorComponent.setBackgroundColor(featuredSliderIndicator);
+            featuredSliderIndicatorComponent.setActiveColor(activeFeaturedSliderIndicator);
+            featuredSliderIndicatorComponent.setNumberOfIndicators(spotLightCategoriesDTO.getSpotLightChannelDTOList().size());
             try {
                 container.addView(featuredSliderIndicatorComponent.getFeaturedIndicatorComponent());
             } catch(Exception e) {
