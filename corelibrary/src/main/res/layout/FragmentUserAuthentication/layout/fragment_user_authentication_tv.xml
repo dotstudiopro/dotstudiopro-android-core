@@ -458,7 +458,7 @@
                     android:layout_width="230dp"
                     android:layout_height="31dp"
                     android:layout_marginTop="30dp"
-                    android:background="@drawable/rounded_facebook_background"
+                    android:background="@drawable/login_with_facebook"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:nextFocusDown="@+id/skipButton"
@@ -472,6 +472,7 @@
                         android:layout_width="30dip"
                         android:layout_height="31dp"
                         android:scaleType="fitXY"
+                        android:visibility="gone"
                         android:src="@drawable/facebook_icon" />
 
                     <Button
@@ -480,7 +481,7 @@
                         android:layout_height="31dp"
                         android:background="@null"
                         android:gravity="center"
-                        android:text="Sign In with Facebook"
+                        android:text=""
                         android:textAllCaps="false"
                         android:textColor="#FFFFFF"
                         android:textSize="11sp" />
