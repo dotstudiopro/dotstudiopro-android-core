@@ -472,8 +472,7 @@
                         android:layout_width="30dip"
                         android:layout_height="31dp"
                         android:scaleType="fitXY"
-                        android:visibility="gone"
-                        android:src="@drawable/facebook_icon" />
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@+id/facebookButton"
