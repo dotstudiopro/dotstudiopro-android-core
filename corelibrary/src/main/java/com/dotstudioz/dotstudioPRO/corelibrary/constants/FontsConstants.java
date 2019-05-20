@@ -3,10 +3,12 @@ package com.dotstudioz.dotstudioPRO.corelibrary.constants;
 import android.content.Context;
 import android.graphics.Typeface;
 
+import java.io.Serializable;
+
 /**
  * Created by mohsin on 15-10-2016.
  */
-public class FontsConstants {
+public class FontsConstants implements Serializable {
     private static FontsConstants ourInstance = new FontsConstants();
 
     public static Typeface tfRegular;
