@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 73
-        versionName "1.0.73"
+        versionCode 75
+        versionName "1.0.75"
     }
     buildTypes {
         release {
@@ -100,7 +100,7 @@ dependencies {
 
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-model:1.0.12')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-model:1.0.13')
             {
                 exclude group: 'com.android.support'
             }
@@ -109,18 +109,18 @@ dependencies {
                 exclude group: 'com.android.support'
             }
     // Service Lib
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.35')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.36')
             {
                 exclude group: 'com.android.support'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.12'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.13'
             }
 
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.40')
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-player:1.0.41')
             {
                 exclude group: 'com.android.support'
                 exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-analytics:1.0.13'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.35'
-                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.12'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-services:1.0.36'
+                exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.13'
             }
 
 }

@@ -8,78 +8,72 @@ import java.io.Serializable;
 /**
  * Created by mohsin on 15-10-2016.
  */
-public class FontsConstantsV1 implements Serializable {
-    private static FontsConstantsV1 ourInstance = new FontsConstantsV1();
-    public static Typeface tfRegular;
-    public static Typeface tfBold;
-    public static Typeface tfSemiBold;
-    public static Typeface tfMedium;
-    public static Typeface alwaysForeverBold;
-    public static Typeface verdana;
-    public static Typeface verdanaRegular;
-    public static Typeface gothamBook;
-    public static Typeface gothamMedium;
-    public static Typeface gothamBold;
-    public static Typeface sourcesansproBold;
-    public static Typeface sourcesansproRegular;
-    public static Typeface klavikaRegular;
-    public static Typeface universltstdUltracn;
-    public static Typeface didactgothicRegular;
-    public static Typeface latoRegular;
-    public static Typeface latoBold;
-    public static Typeface sfProRegular;
-    public static Typeface sfProDisplayRegular;
-    public static Typeface sfProBold;
-    public static Typeface futuraMediumBt;
-    public static Typeface futuraMediumCondensedBt;
-    public static Typeface futuraCondensedExtraBold;
-    public static Typeface futuraBookFont;
-    public static Typeface futuraLightFont;
-    public static Typeface avenirMediumFont;
-    public static Typeface avenirNextRegularFont;
-    public static Typeface montserratRegularFont;
-    public static Typeface montserratBoldFont;
-    public static Typeface montserratSemiBoldFont;
-    public static Typeface montserratMediumFont;
-    public static Typeface opensansSemiBoldFont;
-    public static Typeface opensansBoldFont;
-    public static Typeface opensansLightFont;
-    public static Typeface robotBlackFont;
-    public static Typeface proximaNovaExtraCondensedBlackFont;
-    public static Typeface robotMediumFont;
-    public static Typeface robotRegularFont;
-    public static Typeface robotLightFont;
-    public static Typeface latoRegularFont;
-    public static Typeface tfSitkaHeadingRegular;
-    public static Typeface tfSitkaHeadingBold;
-    public static Typeface tfSitkaDisplayRegular;
-    public static Typeface tfSitkaDisplayBold;
-    public static Typeface sitka_headingFont;
-    public static Typeface sitka_displayFont;
-    public static Typeface khandBoldFont;
-    public static Typeface khandLightFont;
-    public static Typeface khandMediumFont;
-    public static Typeface khandRegularFont;
-    public static Typeface khandSemiBoldFont;
-    public static Typeface comfortaaBoldFont;
-    public static Typeface comfortaaRegularFont;
-    public static Typeface comfortaaLightFont;
-    public static Typeface comfortaaThinFont;
-    public static Typeface lilitaoneRegularFont;
-    public static Typeface arimoRegularFont;
-    public static Typeface arimoBoldFont;
+public class FontsConstants_V1 implements Serializable {
+    private  FontsConstants_V1 ourInstance = new FontsConstants_V1();
+    public  Typeface tfRegular;
+    public  Typeface tfBold;
+    public  Typeface tfSemiBold;
+    public  Typeface tfMedium;
+    public  Typeface alwaysForeverBold;
+    public  Typeface verdana;
+    public  Typeface verdanaRegular;
+    public  Typeface gothamBook;
+    public  Typeface gothamMedium;
+    public  Typeface gothamBold;
+    public  Typeface sourcesansproBold;
+    public  Typeface sourcesansproRegular;
+    public  Typeface klavikaRegular;
+    public  Typeface universltstdUltracn;
+    public  Typeface didactgothicRegular;
+    public  Typeface latoRegular;
+    public  Typeface latoBold;
+    public  Typeface sfProRegular;
+    public  Typeface sfProDisplayRegular;
+    public  Typeface sfProBold;
+    public  Typeface futuraMediumBt;
+    public  Typeface futuraMediumCondensedBt;
+    public  Typeface futuraCondensedExtraBold;
+    public  Typeface futuraBookFont;
+    public  Typeface futuraLightFont;
+    public  Typeface avenirMediumFont;
+    public  Typeface avenirNextRegularFont;
+    public  Typeface montserratRegularFont;
+    public  Typeface montserratBoldFont;
+    public  Typeface montserratSemiBoldFont;
+    public  Typeface montserratMediumFont;
+    public  Typeface opensansSemiBoldFont;
+    public  Typeface opensansBoldFont;
+    public  Typeface opensansLightFont;
+    public  Typeface robotBlackFont;
+    public  Typeface proximaNovaExtraCondensedBlackFont;
+    public  Typeface robotMediumFont;
+    public  Typeface robotRegularFont;
+    public  Typeface robotLightFont;
+    public  Typeface latoRegularFont;
+    public  Typeface tfSitkaHeadingRegular;
+    public  Typeface tfSitkaHeadingBold;
+    public  Typeface tfSitkaDisplayRegular;
+    public  Typeface tfSitkaDisplayBold;
+    public  Typeface sitka_headingFont;
+    public  Typeface sitka_displayFont;
+    public  Typeface khandBoldFont;
+    public  Typeface khandLightFont;
+    public  Typeface khandMediumFont;
+    public  Typeface khandRegularFont;
+    public  Typeface khandSemiBoldFont;
+    public  Typeface comfortaaBoldFont;
+    public  Typeface comfortaaRegularFont;
+    public  Typeface comfortaaLightFont;
+    public  Typeface comfortaaThinFont;
+    public  Typeface lilitaoneRegularFont;
+    public  Typeface arimoRegularFont;
+    public  Typeface arimoBoldFont;
     public  Typeface opensansRegularFont;
 
 
-    public void initialize(Context ctx)
+    public void initializeFontInstance(Context ctx)
     {
         opensansRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_regular.ttf");
-    }
-
-
-    public static void initializeInstance(Context ctx) {
-
-
         tfRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-regular.ttf");
         tfBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-bold.ttf");
         tfSemiBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-semibold.ttf");
@@ -140,470 +134,541 @@ public class FontsConstantsV1 implements Serializable {
         arimoRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "arimo-regular.ttf");
     }
 
-    public static Typeface getTfRegular() {
+
+    /*public static void initializeInstance(Context ctx) {
+
+
+        tfRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-regular.ttf");
+        tfBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-bold.ttf");
+        tfSemiBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-semibold.ttf");
+        tfMedium = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-medium.ttf");
+        alwaysForeverBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "always-forever-bold.ttf");
+        verdana = Typeface.createFromAsset(ctx.getResources().getAssets(), "verdana.ttf");
+        verdanaRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "verdana_regular.ttf");
+        gothamBook = Typeface.createFromAsset(ctx.getResources().getAssets(), "gotham-book.ttf");
+        gothamMedium = Typeface.createFromAsset(ctx.getResources().getAssets(), "gotham-medium.ttf");
+        gothamBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "gotham-bold.ttf");
+        sourcesansproBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "sourcesanspro-bold.ttf");
+        sourcesansproRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "sourcesanspro-regular.ttf");
+        klavikaRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "klavika-regular.otf");
+        universltstdUltracn = Typeface.createFromAsset(ctx.getResources().getAssets(), "universltstd-ultracn.otf");
+        universltstdUltracn = Typeface.createFromAsset(ctx.getResources().getAssets(), "didactgothic-regular.ttf");
+        latoRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "lato-regular.ttf");
+        latoBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "lato-bold.ttf");
+        sfProRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "sanfranciscotext-regular.otf");
+        sfProDisplayRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "sanfranciscodisplay-regular.otf");
+        sfProBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "sanfranciscotext-bold.otf");
+        futuraMediumBt = Typeface.createFromAsset(ctx.getResources().getAssets(), "futura-medium-bt.ttf");
+        futuraMediumCondensedBt = Typeface.createFromAsset(ctx.getResources().getAssets(), "futura-medium-condensed-bt.ttf");
+        futuraCondensedExtraBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "futura-condensed-extra-bold.otf");
+        futuraBookFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "futura-book-font.ttf");
+        futuraLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "futura-light-font.ttf");
+        *//*avenirMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "avenir-medium.ttf");*//*
+        avenirNextRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "avenirnext-regular.ttf");
+        montserratRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-regular.ttf");
+        montserratBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-bold.ttf");
+        montserratSemiBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-semibold.ttf");
+        montserratMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "montserrat-medium.ttf");
+        opensansBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_bold.ttf");
+        opensansSemiBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_semibold.ttf");
+        opensansLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_light.ttf");
+        robotBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_black.ttf");
+        proximaNovaExtraCondensedBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_extra_condensed_black.otf");
+        robotMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_medium.ttf");
+        latoRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "lato_regular.ttf");
+        tfSitkaHeadingRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-heading-regular.ttc");
+        tfSitkaHeadingBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-heading-bold.ttc");
+        tfSitkaDisplayRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display-regular.ttc");
+        tfSitkaDisplayBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display-bold.ttc");
+        robotRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_regular.ttf");
+        robotLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_light.ttf");
+        sitka_headingFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-heading.ttc");
+        sitka_displayFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display.ttc");
+        khandBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-bold.ttf");
+        khandLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-light.ttf");
+        khandMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-medium.ttf");
+        khandRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-regular.ttf");
+        khandSemiBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-semibold.ttf");
+        comfortaaBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-bold.ttf");
+        comfortaaRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-regular.ttf");
+        comfortaaLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-light.ttf");
+        comfortaaThinFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "comfortaa-thin.ttf");
+        lilitaoneRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "lilitaone-regular.ttf");
+        arimoBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "arimo-bold.ttf");
+        arimoRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "arimo-regular.ttf");
+    }*/
+
+
+    public FontsConstants_V1 getOurInstance() {
+        return ourInstance;
+    }
+
+    public void setOurInstance(FontsConstants_V1 ourInstance) {
+        this.ourInstance = ourInstance;
+    }
+
+    public Typeface getTfRegular() {
         return tfRegular;
     }
 
-    public static void setTfRegular(Typeface tfRegular) {
-        FontsConstantsV1.tfRegular = tfRegular;
+    public void setTfRegular(Typeface tfRegular) {
+        this.tfRegular = tfRegular;
     }
 
-    public static Typeface getTfBold() {
+    public Typeface getTfBold() {
         return tfBold;
     }
 
-    public static void setTfBold(Typeface tfBold) {
-        FontsConstantsV1.tfBold = tfBold;
+    public void setTfBold(Typeface tfBold) {
+        this.tfBold = tfBold;
     }
 
-    public static Typeface getTfSemiBold() {
+    public Typeface getTfSemiBold() {
         return tfSemiBold;
     }
 
-    public static void setTfSemiBold(Typeface tfSemiBold) {
-        FontsConstantsV1.tfSemiBold = tfSemiBold;
+    public void setTfSemiBold(Typeface tfSemiBold) {
+        this.tfSemiBold = tfSemiBold;
     }
 
-    public static Typeface getTfMedium() {
+    public Typeface getTfMedium() {
         return tfMedium;
     }
 
-    public static void setTfMedium(Typeface tfMedium) {
-        FontsConstantsV1.tfMedium = tfMedium;
+    public void setTfMedium(Typeface tfMedium) {
+        this.tfMedium = tfMedium;
     }
 
-    public static Typeface getAlwaysForeverBold() {
+    public Typeface getAlwaysForeverBold() {
         return alwaysForeverBold;
     }
 
-    public static void setAlwaysForeverBold(Typeface alwaysForeverBold) {
-        FontsConstantsV1.alwaysForeverBold = alwaysForeverBold;
+    public void setAlwaysForeverBold(Typeface alwaysForeverBold) {
+        this.alwaysForeverBold = alwaysForeverBold;
     }
 
-    public static Typeface getVerdana() {
+    public Typeface getVerdana() {
         return verdana;
     }
 
-    public static void setVerdana(Typeface verdana) {
-        FontsConstantsV1.verdana = verdana;
+    public void setVerdana(Typeface verdana) {
+        this.verdana = verdana;
     }
 
-    public static Typeface getVerdanaRegular() {
+    public Typeface getVerdanaRegular() {
         return verdanaRegular;
     }
 
-    public static void setVerdanaRegular(Typeface verdanaRegular) {
-        FontsConstantsV1.verdanaRegular = verdanaRegular;
+    public void setVerdanaRegular(Typeface verdanaRegular) {
+        this.verdanaRegular = verdanaRegular;
     }
 
-    public static Typeface getGothamBook() {
+    public Typeface getGothamBook() {
         return gothamBook;
     }
 
-    public static void setGothamBook(Typeface gothamBook) {
-        FontsConstantsV1.gothamBook = gothamBook;
+    public void setGothamBook(Typeface gothamBook) {
+        this.gothamBook = gothamBook;
     }
 
-    public static Typeface getGothamMedium() {
+    public Typeface getGothamMedium() {
         return gothamMedium;
     }
 
-    public static void setGothamMedium(Typeface gothamMedium) {
-        FontsConstantsV1.gothamMedium = gothamMedium;
+    public void setGothamMedium(Typeface gothamMedium) {
+        this.gothamMedium = gothamMedium;
     }
 
-    public static Typeface getGothamBold() {
+    public Typeface getGothamBold() {
         return gothamBold;
     }
 
-    public static void setGothamBold(Typeface gothamBold) {
-        FontsConstantsV1.gothamBold = gothamBold;
+    public void setGothamBold(Typeface gothamBold) {
+        this.gothamBold = gothamBold;
     }
 
-    public static Typeface getSourcesansproBold() {
+    public Typeface getSourcesansproBold() {
         return sourcesansproBold;
     }
 
-    public static void setSourcesansproBold(Typeface sourcesansproBold) {
-        FontsConstantsV1.sourcesansproBold = sourcesansproBold;
+    public void setSourcesansproBold(Typeface sourcesansproBold) {
+        this.sourcesansproBold = sourcesansproBold;
     }
 
-    public static Typeface getSourcesansproRegular() {
+    public Typeface getSourcesansproRegular() {
         return sourcesansproRegular;
     }
 
-    public static void setSourcesansproRegular(Typeface sourcesansproRegular) {
-        FontsConstantsV1.sourcesansproRegular = sourcesansproRegular;
+    public void setSourcesansproRegular(Typeface sourcesansproRegular) {
+        this.sourcesansproRegular = sourcesansproRegular;
     }
 
-    public static Typeface getKlavikaRegular() {
+    public Typeface getKlavikaRegular() {
         return klavikaRegular;
     }
 
-    public static void setKlavikaRegular(Typeface klavikaRegular) {
-        FontsConstantsV1.klavikaRegular = klavikaRegular;
+    public void setKlavikaRegular(Typeface klavikaRegular) {
+        this.klavikaRegular = klavikaRegular;
     }
 
-    public static Typeface getUniversltstdUltracn() {
+    public Typeface getUniversltstdUltracn() {
         return universltstdUltracn;
     }
 
-    public static void setUniversltstdUltracn(Typeface universltstdUltracn) {
-        FontsConstantsV1.universltstdUltracn = universltstdUltracn;
+    public void setUniversltstdUltracn(Typeface universltstdUltracn) {
+        this.universltstdUltracn = universltstdUltracn;
     }
 
-    public static Typeface getDidactgothicRegular() {
+    public Typeface getDidactgothicRegular() {
         return didactgothicRegular;
     }
 
-    public static void setDidactgothicRegular(Typeface didactgothicRegular) {
-        FontsConstantsV1.didactgothicRegular = didactgothicRegular;
+    public void setDidactgothicRegular(Typeface didactgothicRegular) {
+        this.didactgothicRegular = didactgothicRegular;
     }
 
-    public static Typeface getLatoRegular() {
+    public Typeface getLatoRegular() {
         return latoRegular;
     }
 
-    public static void setLatoRegular(Typeface latoRegular) {
-        FontsConstantsV1.latoRegular = latoRegular;
+    public void setLatoRegular(Typeface latoRegular) {
+        this.latoRegular = latoRegular;
     }
 
-    public static Typeface getLatoBold() {
+    public Typeface getLatoBold() {
         return latoBold;
     }
 
-    public static void setLatoBold(Typeface latoBold) {
-        FontsConstantsV1.latoBold = latoBold;
+    public void setLatoBold(Typeface latoBold) {
+        this.latoBold = latoBold;
     }
 
-    public static Typeface getSfProRegular() {
+    public Typeface getSfProRegular() {
         return sfProRegular;
     }
 
-    public static void setSfProRegular(Typeface sfProRegular) {
-        FontsConstantsV1.sfProRegular = sfProRegular;
+    public void setSfProRegular(Typeface sfProRegular) {
+        this.sfProRegular = sfProRegular;
     }
 
-    public static Typeface getSfProDisplayRegular() {
+    public Typeface getSfProDisplayRegular() {
         return sfProDisplayRegular;
     }
 
-    public static void setSfProDisplayRegular(Typeface sfProDisplayRegular) {
-        FontsConstantsV1.sfProDisplayRegular = sfProDisplayRegular;
+    public void setSfProDisplayRegular(Typeface sfProDisplayRegular) {
+        this.sfProDisplayRegular = sfProDisplayRegular;
     }
 
-    public static Typeface getSfProBold() {
+    public Typeface getSfProBold() {
         return sfProBold;
     }
 
-    public static void setSfProBold(Typeface sfProBold) {
-        FontsConstantsV1.sfProBold = sfProBold;
+    public void setSfProBold(Typeface sfProBold) {
+        this.sfProBold = sfProBold;
     }
 
-    public static Typeface getFuturaMediumBt() {
+    public Typeface getFuturaMediumBt() {
         return futuraMediumBt;
     }
 
-    public static void setFuturaMediumBt(Typeface futuraMediumBt) {
-        FontsConstantsV1.futuraMediumBt = futuraMediumBt;
+    public void setFuturaMediumBt(Typeface futuraMediumBt) {
+        this.futuraMediumBt = futuraMediumBt;
     }
 
-    public static Typeface getFuturaMediumCondensedBt() {
+    public Typeface getFuturaMediumCondensedBt() {
         return futuraMediumCondensedBt;
     }
 
-    public static void setFuturaMediumCondensedBt(Typeface futuraMediumCondensedBt) {
-        FontsConstantsV1.futuraMediumCondensedBt = futuraMediumCondensedBt;
+    public void setFuturaMediumCondensedBt(Typeface futuraMediumCondensedBt) {
+        this.futuraMediumCondensedBt = futuraMediumCondensedBt;
     }
 
-    public static Typeface getFuturaCondensedExtraBold() {
+    public Typeface getFuturaCondensedExtraBold() {
         return futuraCondensedExtraBold;
     }
 
-    public static void setFuturaCondensedExtraBold(Typeface futuraCondensedExtraBold) {
-        FontsConstantsV1.futuraCondensedExtraBold = futuraCondensedExtraBold;
+    public void setFuturaCondensedExtraBold(Typeface futuraCondensedExtraBold) {
+        this.futuraCondensedExtraBold = futuraCondensedExtraBold;
     }
 
-    public static Typeface getFuturaBookFont() {
+    public Typeface getFuturaBookFont() {
         return futuraBookFont;
     }
 
-    public static void setFuturaBookFont(Typeface futuraBookFont) {
-        FontsConstantsV1.futuraBookFont = futuraBookFont;
+    public void setFuturaBookFont(Typeface futuraBookFont) {
+        this.futuraBookFont = futuraBookFont;
     }
 
-    public static Typeface getFuturaLightFont() {
+    public Typeface getFuturaLightFont() {
         return futuraLightFont;
     }
 
-    public static void setFuturaLightFont(Typeface futuraLightFont) {
-        FontsConstantsV1.futuraLightFont = futuraLightFont;
+    public void setFuturaLightFont(Typeface futuraLightFont) {
+        this.futuraLightFont = futuraLightFont;
     }
 
-    public static Typeface getAvenirMediumFont() {
+    public Typeface getAvenirMediumFont() {
         return avenirMediumFont;
     }
 
-    public static void setAvenirMediumFont(Typeface avenirMediumFont) {
-        FontsConstantsV1.avenirMediumFont = avenirMediumFont;
+    public void setAvenirMediumFont(Typeface avenirMediumFont) {
+        this.avenirMediumFont = avenirMediumFont;
     }
 
-    public static Typeface getAvenirNextRegularFont() {
+    public Typeface getAvenirNextRegularFont() {
         return avenirNextRegularFont;
     }
 
-    public static void setAvenirNextRegularFont(Typeface avenirNextRegularFont) {
-        FontsConstantsV1.avenirNextRegularFont = avenirNextRegularFont;
+    public void setAvenirNextRegularFont(Typeface avenirNextRegularFont) {
+        this.avenirNextRegularFont = avenirNextRegularFont;
     }
 
-    public static Typeface getMontserratRegularFont() {
+    public Typeface getMontserratRegularFont() {
         return montserratRegularFont;
     }
 
-    public static void setMontserratRegularFont(Typeface montserratRegularFont) {
-        FontsConstantsV1.montserratRegularFont = montserratRegularFont;
+    public void setMontserratRegularFont(Typeface montserratRegularFont) {
+        this.montserratRegularFont = montserratRegularFont;
     }
 
-    public static Typeface getMontserratBoldFont() {
+    public Typeface getMontserratBoldFont() {
         return montserratBoldFont;
     }
 
-    public static void setMontserratBoldFont(Typeface montserratBoldFont) {
-        FontsConstantsV1.montserratBoldFont = montserratBoldFont;
+    public void setMontserratBoldFont(Typeface montserratBoldFont) {
+        this.montserratBoldFont = montserratBoldFont;
     }
 
-    public static Typeface getMontserratSemiBoldFont() {
+    public Typeface getMontserratSemiBoldFont() {
         return montserratSemiBoldFont;
     }
 
-    public static void setMontserratSemiBoldFont(Typeface montserratSemiBoldFont) {
-        FontsConstantsV1.montserratSemiBoldFont = montserratSemiBoldFont;
+    public void setMontserratSemiBoldFont(Typeface montserratSemiBoldFont) {
+        this.montserratSemiBoldFont = montserratSemiBoldFont;
     }
 
-    public static Typeface getMontserratMediumFont() {
+    public Typeface getMontserratMediumFont() {
         return montserratMediumFont;
     }
 
-    public static void setMontserratMediumFont(Typeface montserratMediumFont) {
-        FontsConstantsV1.montserratMediumFont = montserratMediumFont;
+    public void setMontserratMediumFont(Typeface montserratMediumFont) {
+        this.montserratMediumFont = montserratMediumFont;
     }
 
-
-
-    public static Typeface getOpensansSemiBoldFont() {
+    public Typeface getOpensansSemiBoldFont() {
         return opensansSemiBoldFont;
     }
 
-    public static void setOpensansSemiBoldFont(Typeface opensansSemiBoldFont) {
-        FontsConstantsV1.opensansSemiBoldFont = opensansSemiBoldFont;
+    public void setOpensansSemiBoldFont(Typeface opensansSemiBoldFont) {
+        this.opensansSemiBoldFont = opensansSemiBoldFont;
     }
 
-    public static Typeface getOpensansBoldFont() {
+    public Typeface getOpensansBoldFont() {
         return opensansBoldFont;
     }
 
-    public static void setOpensansBoldFont(Typeface opensansBoldFont) {
-        FontsConstantsV1.opensansBoldFont = opensansBoldFont;
+    public void setOpensansBoldFont(Typeface opensansBoldFont) {
+        this.opensansBoldFont = opensansBoldFont;
     }
 
-    public static Typeface getOpensansLightFont() {
+    public Typeface getOpensansLightFont() {
         return opensansLightFont;
     }
 
-    public static void setOpensansLightFont(Typeface opensansLightFont) {
-        FontsConstantsV1.opensansLightFont = opensansLightFont;
+    public void setOpensansLightFont(Typeface opensansLightFont) {
+        this.opensansLightFont = opensansLightFont;
     }
 
-    public static Typeface getRobotBlackFont() {
+    public Typeface getRobotBlackFont() {
         return robotBlackFont;
     }
 
-    public static void setRobotBlackFont(Typeface robotBlackFont) {
-        FontsConstantsV1.robotBlackFont = robotBlackFont;
+    public void setRobotBlackFont(Typeface robotBlackFont) {
+        this.robotBlackFont = robotBlackFont;
     }
 
-    public static Typeface getProximaNovaExtraCondensedBlackFont() {
+    public Typeface getProximaNovaExtraCondensedBlackFont() {
         return proximaNovaExtraCondensedBlackFont;
     }
 
-    public static void setProximaNovaExtraCondensedBlackFont(Typeface proximaNovaExtraCondensedBlackFont) {
-        FontsConstantsV1.proximaNovaExtraCondensedBlackFont = proximaNovaExtraCondensedBlackFont;
+    public void setProximaNovaExtraCondensedBlackFont(Typeface proximaNovaExtraCondensedBlackFont) {
+        this.proximaNovaExtraCondensedBlackFont = proximaNovaExtraCondensedBlackFont;
     }
 
-    public static Typeface getRobotMediumFont() {
+    public Typeface getRobotMediumFont() {
         return robotMediumFont;
     }
 
-    public static void setRobotMediumFont(Typeface robotMediumFont) {
-        FontsConstantsV1.robotMediumFont = robotMediumFont;
+    public void setRobotMediumFont(Typeface robotMediumFont) {
+        this.robotMediumFont = robotMediumFont;
     }
 
-    public static Typeface getRobotRegularFont() {
+    public Typeface getRobotRegularFont() {
         return robotRegularFont;
     }
 
-    public static void setRobotRegularFont(Typeface robotRegularFont) {
-        FontsConstantsV1.robotRegularFont = robotRegularFont;
+    public void setRobotRegularFont(Typeface robotRegularFont) {
+        this.robotRegularFont = robotRegularFont;
     }
 
-    public static Typeface getRobotLightFont() {
+    public Typeface getRobotLightFont() {
         return robotLightFont;
     }
 
-    public static void setRobotLightFont(Typeface robotLightFont) {
-        FontsConstantsV1.robotLightFont = robotLightFont;
+    public void setRobotLightFont(Typeface robotLightFont) {
+        this.robotLightFont = robotLightFont;
     }
 
-    public static Typeface getLatoRegularFont() {
+    public Typeface getLatoRegularFont() {
         return latoRegularFont;
     }
 
-    public static void setLatoRegularFont(Typeface latoRegularFont) {
-        FontsConstantsV1.latoRegularFont = latoRegularFont;
+    public void setLatoRegularFont(Typeface latoRegularFont) {
+        this.latoRegularFont = latoRegularFont;
     }
 
-    public static Typeface getTfSitkaHeadingRegular() {
+    public Typeface getTfSitkaHeadingRegular() {
         return tfSitkaHeadingRegular;
     }
 
-    public static void setTfSitkaHeadingRegular(Typeface tfSitkaHeadingRegular) {
-        FontsConstantsV1.tfSitkaHeadingRegular = tfSitkaHeadingRegular;
+    public void setTfSitkaHeadingRegular(Typeface tfSitkaHeadingRegular) {
+        this.tfSitkaHeadingRegular = tfSitkaHeadingRegular;
     }
 
-    public static Typeface getTfSitkaHeadingBold() {
+    public Typeface getTfSitkaHeadingBold() {
         return tfSitkaHeadingBold;
     }
 
-    public static void setTfSitkaHeadingBold(Typeface tfSitkaHeadingBold) {
-        FontsConstantsV1.tfSitkaHeadingBold = tfSitkaHeadingBold;
+    public void setTfSitkaHeadingBold(Typeface tfSitkaHeadingBold) {
+        this.tfSitkaHeadingBold = tfSitkaHeadingBold;
     }
 
-    public static Typeface getTfSitkaDisplayRegular() {
+    public Typeface getTfSitkaDisplayRegular() {
         return tfSitkaDisplayRegular;
     }
 
-    public static void setTfSitkaDisplayRegular(Typeface tfSitkaDisplayRegular) {
-        FontsConstantsV1.tfSitkaDisplayRegular = tfSitkaDisplayRegular;
+    public void setTfSitkaDisplayRegular(Typeface tfSitkaDisplayRegular) {
+        this.tfSitkaDisplayRegular = tfSitkaDisplayRegular;
     }
 
-    public static Typeface getTfSitkaDisplayBold() {
+    public Typeface getTfSitkaDisplayBold() {
         return tfSitkaDisplayBold;
     }
 
-    public static void setTfSitkaDisplayBold(Typeface tfSitkaDisplayBold) {
-        FontsConstantsV1.tfSitkaDisplayBold = tfSitkaDisplayBold;
+    public void setTfSitkaDisplayBold(Typeface tfSitkaDisplayBold) {
+        this.tfSitkaDisplayBold = tfSitkaDisplayBold;
     }
 
-    public static Typeface getSitka_headingFont() {
+    public Typeface getSitka_headingFont() {
         return sitka_headingFont;
     }
 
-    public static void setSitka_headingFont(Typeface sitka_headingFont) {
-        FontsConstantsV1.sitka_headingFont = sitka_headingFont;
+    public void setSitka_headingFont(Typeface sitka_headingFont) {
+        this.sitka_headingFont = sitka_headingFont;
     }
 
-    public static Typeface getSitka_displayFont() {
+    public Typeface getSitka_displayFont() {
         return sitka_displayFont;
     }
 
-    public static void setSitka_displayFont(Typeface sitka_displayFont) {
-        FontsConstantsV1.sitka_displayFont = sitka_displayFont;
+    public void setSitka_displayFont(Typeface sitka_displayFont) {
+        this.sitka_displayFont = sitka_displayFont;
     }
 
-    public static Typeface getKhandBoldFont() {
+    public Typeface getKhandBoldFont() {
         return khandBoldFont;
     }
 
-    public static void setKhandBoldFont(Typeface khandBoldFont) {
-        FontsConstantsV1.khandBoldFont = khandBoldFont;
+    public void setKhandBoldFont(Typeface khandBoldFont) {
+        this.khandBoldFont = khandBoldFont;
     }
 
-    public static Typeface getKhandLightFont() {
+    public Typeface getKhandLightFont() {
         return khandLightFont;
     }
 
-    public static void setKhandLightFont(Typeface khandLightFont) {
-        FontsConstantsV1.khandLightFont = khandLightFont;
+    public void setKhandLightFont(Typeface khandLightFont) {
+        this.khandLightFont = khandLightFont;
     }
 
-    public static Typeface getKhandMediumFont() {
+    public Typeface getKhandMediumFont() {
         return khandMediumFont;
     }
 
-    public static void setKhandMediumFont(Typeface khandMediumFont) {
-        FontsConstantsV1.khandMediumFont = khandMediumFont;
+    public void setKhandMediumFont(Typeface khandMediumFont) {
+        this.khandMediumFont = khandMediumFont;
     }
 
-    public static Typeface getKhandRegularFont() {
+    public Typeface getKhandRegularFont() {
         return khandRegularFont;
     }
 
-    public static void setKhandRegularFont(Typeface khandRegularFont) {
-        FontsConstantsV1.khandRegularFont = khandRegularFont;
+    public void setKhandRegularFont(Typeface khandRegularFont) {
+        this.khandRegularFont = khandRegularFont;
     }
 
-    public static Typeface getKhandSemiBoldFont() {
+    public Typeface getKhandSemiBoldFont() {
         return khandSemiBoldFont;
     }
 
-    public static void setKhandSemiBoldFont(Typeface khandSemiBoldFont) {
-        FontsConstantsV1.khandSemiBoldFont = khandSemiBoldFont;
+    public void setKhandSemiBoldFont(Typeface khandSemiBoldFont) {
+        this.khandSemiBoldFont = khandSemiBoldFont;
     }
 
-    public static Typeface getComfortaaBoldFont() {
+    public Typeface getComfortaaBoldFont() {
         return comfortaaBoldFont;
     }
 
-    public static void setComfortaaBoldFont(Typeface comfortaaBoldFont) {
-        FontsConstantsV1.comfortaaBoldFont = comfortaaBoldFont;
+    public void setComfortaaBoldFont(Typeface comfortaaBoldFont) {
+        this.comfortaaBoldFont = comfortaaBoldFont;
     }
 
-    public static Typeface getComfortaaRegularFont() {
+    public Typeface getComfortaaRegularFont() {
         return comfortaaRegularFont;
     }
 
-    public static void setComfortaaRegularFont(Typeface comfortaaRegularFont) {
-        FontsConstantsV1.comfortaaRegularFont = comfortaaRegularFont;
+    public void setComfortaaRegularFont(Typeface comfortaaRegularFont) {
+        this.comfortaaRegularFont = comfortaaRegularFont;
     }
 
-    public static Typeface getComfortaaLightFont() {
+    public Typeface getComfortaaLightFont() {
         return comfortaaLightFont;
     }
 
-    public static void setComfortaaLightFont(Typeface comfortaaLightFont) {
-        FontsConstantsV1.comfortaaLightFont = comfortaaLightFont;
+    public void setComfortaaLightFont(Typeface comfortaaLightFont) {
+        this.comfortaaLightFont = comfortaaLightFont;
     }
 
-    public static Typeface getComfortaaThinFont() {
+    public Typeface getComfortaaThinFont() {
         return comfortaaThinFont;
     }
 
-    public static void setComfortaaThinFont(Typeface comfortaaThinFont) {
-        FontsConstantsV1.comfortaaThinFont = comfortaaThinFont;
+    public void setComfortaaThinFont(Typeface comfortaaThinFont) {
+        this.comfortaaThinFont = comfortaaThinFont;
     }
 
-    public static Typeface getLilitaoneRegularFont() {
+    public Typeface getLilitaoneRegularFont() {
         return lilitaoneRegularFont;
     }
 
-    public static void setLilitaoneRegularFont(Typeface lilitaoneRegularFont) {
-        FontsConstantsV1.lilitaoneRegularFont = lilitaoneRegularFont;
+    public void setLilitaoneRegularFont(Typeface lilitaoneRegularFont) {
+        this.lilitaoneRegularFont = lilitaoneRegularFont;
     }
 
-    public static Typeface getArimoRegularFont() {
+    public Typeface getArimoRegularFont() {
         return arimoRegularFont;
     }
 
-    public static void setArimoRegularFont(Typeface arimoRegularFont) {
-        FontsConstantsV1.arimoRegularFont = arimoRegularFont;
+    public void setArimoRegularFont(Typeface arimoRegularFont) {
+        this.arimoRegularFont = arimoRegularFont;
     }
 
-    public static Typeface getArimoBoldFont() {
+    public Typeface getArimoBoldFont() {
         return arimoBoldFont;
     }
 
-    public static void setArimoBoldFont(Typeface arimoBoldFont) {
-        FontsConstantsV1.arimoBoldFont = arimoBoldFont;
+    public void setArimoBoldFont(Typeface arimoBoldFont) {
+        this.arimoBoldFont = arimoBoldFont;
     }
 
     public Typeface getOpensansRegularFont() {
@@ -613,4 +678,5 @@ public class FontsConstantsV1 implements Serializable {
     public void setOpensansRegularFont(Typeface opensansRegularFont) {
         this.opensansRegularFont = opensansRegularFont;
     }
+
 }
