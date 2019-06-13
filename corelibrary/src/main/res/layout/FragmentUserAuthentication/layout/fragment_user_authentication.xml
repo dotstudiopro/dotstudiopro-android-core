@@ -138,26 +138,26 @@
             android:layout_marginBottom="5dp"/>-->
         <LinearLayout
             android:id="@+id/facebook_container"
-            android:layout_width="230dp"
-            android:layout_height="33dp"
+            android:layout_width="200dp"
+            android:layout_height="28dp"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/login_with_facebook_1"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:nextFocusDown="@+id/skipButton"
             android:nextFocusLeft="@+id/submitButton"
             android:nextFocusRight="@+id/skipButton"
             android:nextFocusUp="@+id/submitButton"
+            android:nextFocusDown="@+id/skipButton"
             android:orientation="horizontal"
-            android:selectAllOnFocus="true"
-            android:layout_marginBottom="5dp">
+            android:selectAllOnFocus="true">
 
             <ImageView
                 android:layout_width="30dip"
                 android:layout_height="31dp"
                 android:scaleType="fitXY"
-                android:visibility="gone"
-                android:src="@drawable/facebook_icon" />
+                android:src="@drawable/facebook_icon"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/facebookButton"
@@ -165,11 +165,11 @@
                 android:layout_height="31dp"
                 android:background="@null"
                 android:gravity="center"
-                android:visibility="gone"
                 android:text="Sign In with Facebook"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="11sp" />
+                android:textSize="11sp"
+                android:visibility="gone" />
 
         </LinearLayout>
 

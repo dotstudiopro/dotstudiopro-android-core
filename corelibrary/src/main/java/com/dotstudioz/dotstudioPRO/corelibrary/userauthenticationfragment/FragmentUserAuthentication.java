@@ -163,11 +163,25 @@ public class FragmentUserAuthentication extends Fragment implements View.OnFocus
             }
         });
 
+        view.findViewById(R.id.facebook_container).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*UsernamePasswordAuth0API.getInstance(getActivity()).authenticateFacebookUser(
+                        auth0Key,
+                        auth0Domain,
+                        companyKey,
+                        connectionNameKey
+                );*/
+                iFragmentUserAuthentication.facebookUserAuthentication();
+            }
+        });
+
         thisFragment = this;
 
         view.findViewById(R.id.usernameEditText).setOnFocusChangeListener(this);
         view.findViewById(R.id.passwordEditText).setOnFocusChangeListener(this);
         view.findViewById(R.id.facebookButton).setOnFocusChangeListener(this);
+        view.findViewById(R.id.facebook_container).setOnFocusChangeListener(this);
         return view;
     }
 
