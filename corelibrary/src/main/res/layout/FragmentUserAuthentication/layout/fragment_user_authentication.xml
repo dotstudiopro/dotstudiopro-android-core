@@ -61,8 +61,8 @@
             android:focusableInTouchMode="true"
             android:nextFocusUp="@+id/passwordEditText"
             android:nextFocusLeft="@+id/passwordEditText"
-            android:nextFocusDown="@+id/facebookButton"
-            android:nextFocusRight="@+id/facebookButton"
+            android:nextFocusDown="@+id/facebook_container"
+            android:nextFocusRight="@+id/facebook_container"
             android:selectAllOnFocus="true"
             android:textAllCaps="false"
             android:background="@drawable/rounded_submit_background"
@@ -149,7 +149,8 @@
             android:nextFocusRight="@+id/skipButton"
             android:nextFocusUp="@+id/submitButton"
             android:orientation="horizontal"
-            android:selectAllOnFocus="true">
+            android:selectAllOnFocus="true"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="30dip"
@@ -179,8 +180,8 @@
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:nextFocusUp="@+id/facebookButton"
-            android:nextFocusLeft="@+id/facebookButton"
+            android:nextFocusUp="@+id/facebook_container"
+            android:nextFocusLeft="@+id/facebook_container"
             android:nextFocusDown="@+id/usernameEditText"
             android:nextFocusRight="@+id/usernameEditText"
             android:selectAllOnFocus="true"
