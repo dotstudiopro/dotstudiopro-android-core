@@ -43,8 +43,8 @@ import com.joanzapata.iconify.fonts.FontAwesomeIcons;
  * Created by mohsin on 15-12-2016.
  */
 
-public class PopularCategoriesFragmentNewPlayer_V1 extends Fragment implements TextureView.SurfaceTextureListener {
-    public PopularCategoriesFragmentNewPlayer_V1() {
+public class PopularCategoriesFragmentNewPlayer_V1_Deprecated extends Fragment implements TextureView.SurfaceTextureListener {
+    public PopularCategoriesFragmentNewPlayer_V1_Deprecated() {
         // Required empty public constructor
     }
 
