@@ -132,10 +132,15 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
             String imageString = "";
             if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getType() != null &&
-                    recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getType().equals("channel")) {
+                    recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getType().equals("channel") &&
+                    recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getSpotLightPoster() != null &&
+                    recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getSpotLightPoster().length() > 0) {
                 imageString = recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getSpotLightPoster();
             } else {
-                imageString = "https://images.dotstudiopro.com/"+recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getThumb();
+                if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getThumb() != null &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getThumb().length() > 0) {
+                    imageString = "https://images.dotstudiopro.com/" + recommendedItemPairDTOList.get(position).getRecommendedItemDTO1().getThumb();
+                }
             }
             imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
 
@@ -248,10 +253,15 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
                 String imageString = "";
                 if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getType() != null &&
-                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getType().equals("channel")) {
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getType().equals("channel") &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getSpotLightPoster() != null &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getSpotLightPoster().length() > 0) {
                     imageString = recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getSpotLightPoster();
                 } else {
-                    imageString = "https://images.dotstudiopro.com/"+recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getThumb();
+                    if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getThumb() != null &&
+                            recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getThumb().length() > 0) {
+                        imageString = "https://images.dotstudiopro.com/" + recommendedItemPairDTOList.get(position).getRecommendedItemDTO2().getThumb();
+                    }
                 }
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
 
@@ -362,10 +372,15 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
                 String imageString = "";
                 if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getType() != null &&
-                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getType().equals("channel")) {
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getType().equals("channel") &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getSpotLightPoster() != null &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getSpotLightPoster().length() > 0) {
                     imageString = recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getSpotLightPoster();
                 } else {
-                    imageString = "https://images.dotstudiopro.com/"+recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getThumb();
+                    if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getThumb() != null &&
+                            recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getThumb().length() > 0) {
+                        imageString = "https://images.dotstudiopro.com/" + recommendedItemPairDTOList.get(position).getRecommendedItemDTO3().getThumb();
+                    }
                 }
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
 
@@ -476,10 +491,15 @@ public class RecommendationChannelsAdapter_V1 extends BaseAdapter {
 
                 String imageString = "";
                 if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getType() != null &&
-                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getType().equals("channel")) {
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getType().equals("channel") &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getSpotLightPoster() != null &&
+                        recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getSpotLightPoster().length() > 0) {
                     imageString = recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getSpotLightPoster();
                 } else {
-                    imageString = "https://images.dotstudiopro.com/"+recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getThumb();
+                    if(recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getThumb() != null &&
+                            recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getThumb().length() > 0) {
+                        imageString = "https://images.dotstudiopro.com/" + recommendedItemPairDTOList.get(position).getRecommendedItemDTO4().getThumb();
+                    }
                 }
                 imageString = CommonUtils.replaceDotstudioproWithMyspotlightForImage(imageString);
 
