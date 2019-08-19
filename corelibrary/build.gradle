@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 94
-        versionName "2.0.12"
+        versionCode 95
+        versionName "2.0.13"
     }
     buildTypes {
         release {
@@ -90,7 +90,7 @@ dependencies {
     /*implementation ('com.github.dotstudiopro:dotstudiopro-android-analytics:2.0.1') {
         exclude group: 'com.android.support'
     }*/
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.55') {
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-services:1.0.56') {
         exclude group: 'com.android.support'
         exclude group:'com.github.dotstudiopro', module: 'dotstudiopro-android-model:1.0.16'
     }
