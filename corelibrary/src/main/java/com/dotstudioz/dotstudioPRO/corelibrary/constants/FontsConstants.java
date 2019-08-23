@@ -46,8 +46,9 @@ public class FontsConstants implements Serializable {
     public static Typeface opensansSemiBoldFont;
     public static Typeface opensansBoldFont;
     public static Typeface opensansLightFont;
-    public static Typeface robotBlackFont;
     public static Typeface proximaNovaExtraCondensedBlackFont;
+    public static Typeface robotBlackFont;
+    public static Typeface robotBoldFont;
     public static Typeface robotMediumFont;
     public static Typeface robotRegularFont;
     public static Typeface robotLightFont;
@@ -109,8 +110,9 @@ public class FontsConstants implements Serializable {
         opensansRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_regular.ttf");
         opensansSemiBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_semibold.ttf");
         opensansLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_light.ttf");
-        robotBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_black.ttf");
         proximaNovaExtraCondensedBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_extra_condensed_black.otf");
+        robotBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_black.ttf");
+        robotBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto-bold.ttf");
         robotMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_medium.ttf");
         latoRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "lato_regular.ttf");
         tfSitkaHeadingRegular = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-heading-regular.ttc");
