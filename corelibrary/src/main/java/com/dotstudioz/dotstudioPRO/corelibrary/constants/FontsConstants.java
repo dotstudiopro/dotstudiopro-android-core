@@ -47,6 +47,13 @@ public class FontsConstants implements Serializable {
     public static Typeface opensansBoldFont;
     public static Typeface opensansLightFont;
     public static Typeface proximaNovaExtraCondensedBlackFont;
+    public static Typeface proximaNovaAltBoldFont;
+    public static Typeface proximaNovaAltLightFont;
+    public static Typeface proximaNovaAltThinFont;
+    public static Typeface proximaNovaBlackFont;
+    public static Typeface proximaNovaBoldFont;
+    public static Typeface proximaNovaRegularFont;
+    public static Typeface proximaNovaThinFont;
     public static Typeface robotBlackFont;
     public static Typeface robotBoldFont;
     public static Typeface robotMediumFont;
@@ -111,6 +118,13 @@ public class FontsConstants implements Serializable {
         opensansSemiBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_semibold.ttf");
         opensansLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "opensans_light.ttf");
         proximaNovaExtraCondensedBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_extra_condensed_black.otf");
+        proximaNovaAltBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_alt_bold.otf");
+        proximaNovaAltLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_alt_light.otf");
+        proximaNovaAltThinFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_alt_thin.otf");
+        proximaNovaBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_black.otf");
+        proximaNovaBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_bold.otf");
+        proximaNovaRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_regular.otf");
+        proximaNovaThinFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "proxima_nova_thin.otf");
         robotBlackFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_black.ttf");
         robotBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto-bold.ttf");
         robotMediumFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_medium.ttf");
