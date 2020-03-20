@@ -87,6 +87,49 @@ public class NewsAdapter_V1 extends BaseAdapter {
         System.out.println(a + " " + b);
     }
 
+    private String getMonthString(int month) {
+        String monthToReturn = "";
+        switch (month) {
+            case 0:
+                monthToReturn = "January";
+                break;
+            case 1:
+                monthToReturn = "February";
+                break;
+            case 2:
+                monthToReturn = "March";
+                break;
+            case 3:
+                monthToReturn = "April";
+                break;
+            case 4:
+                monthToReturn = "May";
+                break;
+            case 5:
+                monthToReturn = "June";
+                break;
+            case 6:
+                monthToReturn = "July";
+                break;
+            case 7:
+                monthToReturn = "August";
+                break;
+            case 8:
+                monthToReturn = "September";
+                break;
+            case 9:
+                monthToReturn = "October";
+                break;
+            case 10:
+                monthToReturn = "November";
+                break;
+            case 11:
+                monthToReturn = "December";
+                break;
+        }
+        return monthToReturn;
+    }
+
     public int ratioWidth = 0;
     public int ratioHeight = 0;
 
@@ -140,7 +183,7 @@ public class NewsAdapter_V1 extends BaseAdapter {
         try {
             DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = (Date) formatter.parse(newsDTOListCollection.get(position).getNewsDTO1().getNewsDate());
-            ((TextView)convertView.findViewById(R.id.topNewsDateTextView)).setText(date.toLocaleString().substring(0,date.toLocaleString().indexOf(':')-3));
+            ((TextView)convertView.findViewById(R.id.topNewsDateTextView)).setText(getMonthString(date.getMonth())+" "+date.toLocaleString().substring(4,date.toLocaleString().indexOf(':')-3));
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -197,7 +240,7 @@ public class NewsAdapter_V1 extends BaseAdapter {
             try {
                 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date date = (Date) formatter.parse(newsDTOListCollection.get(position).getNewsDTO2().getNewsDate());
-                ((TextView)convertView.findViewById(R.id.secondNewsDateTextView)).setText(date.toLocaleString().substring(0,date.toLocaleString().indexOf(':')-3));
+                ((TextView)convertView.findViewById(R.id.secondNewsDateTextView)).setText(getMonthString(date.getMonth())+" "+date.toLocaleString().substring(4,date.toLocaleString().indexOf(':')-3));
             } catch(Exception e) {
                 e.printStackTrace();
             }
@@ -253,7 +296,7 @@ public class NewsAdapter_V1 extends BaseAdapter {
             try {
                 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date date = (Date) formatter.parse(newsDTOListCollection.get(position).getNewsDTO3().getNewsDate());
-                ((TextView)convertView.findViewById(R.id.thirdNewsDateTextView)).setText(date.toLocaleString().substring(0,date.toLocaleString().indexOf(':')-3));
+                ((TextView)convertView.findViewById(R.id.thirdNewsDateTextView)).setText(getMonthString(date.getMonth())+" "+date.toLocaleString().substring(4,date.toLocaleString().indexOf(':')-3));
             } catch(Exception e) {
                 e.printStackTrace();
             }
