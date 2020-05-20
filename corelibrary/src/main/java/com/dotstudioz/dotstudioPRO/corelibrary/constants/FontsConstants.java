@@ -59,6 +59,10 @@ public class FontsConstants implements Serializable {
     public static Typeface robotMediumFont;
     public static Typeface robotRegularFont;
     public static Typeface robotLightFont;
+    public static Typeface robotoCondensedBoldFont;
+    public static Typeface robotoCondensedItalicFont;
+    public static Typeface robotoCondensedLightFont;
+    public static Typeface robotoCondensedRegularFont;
     public static Typeface latoRegularFont;
     public static Typeface tfSitkaHeadingRegular;
     public static Typeface tfSitkaHeadingBold;
@@ -156,6 +160,10 @@ public class FontsConstants implements Serializable {
         tfSitkaDisplayBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display-bold.ttc");
         robotRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_regular.ttf");
         robotLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_light.ttf");
+        robotoCondensedBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_bold.ttf");
+        robotoCondensedItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_italic.ttf");
+        robotoCondensedLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_light.ttf");
+        robotoCondensedRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_regular.ttf");
         sitka_headingFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-heading.ttc");
         sitka_displayFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display.ttc");
         khandBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "khand-bold.ttf");
@@ -277,7 +285,11 @@ public class FontsConstants implements Serializable {
         POPPINSSEMIBOLD,
         POPPINSSEMIBOLDITALIC,
         POPPINSTHIN,
-        POPPINSTHINITALIC
+        POPPINSTHINITALIC,
+        ROBOTOCONDENSEDBOLDFONT,
+        ROBOTOCONDENSEDITALICFONT,
+        ROBOTOCONDENSEDLIGHTFONT,
+        ROBOTOCONDENSEDREGULARFONT
     };
     public Context context;
     public Typeface getGetTypeFace(int fontsEnum) {
@@ -452,6 +464,14 @@ public class FontsConstants implements Serializable {
             return FontsConstants.poppinsThin;
         } else if(fontsEnum == FONTS_ENUM.POPPINSTHINITALIC.ordinal()) {
             return FontsConstants.poppinsThinItalic;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDBOLDFONT.ordinal()) {
+            return FontsConstants.robotoCondensedBoldFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDITALICFONT.ordinal()) {
+            return FontsConstants.robotoCondensedItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDLIGHTFONT.ordinal()) {
+            return FontsConstants.robotoCondensedLightFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDREGULARFONT.ordinal()) {
+            return FontsConstants.robotoCondensedRegularFont;
         }
 
         return FontsConstants.verdanaRegular;
