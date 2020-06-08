@@ -138,6 +138,10 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
 
     public boolean isFeaturedCategoryNotPresent = false;
 
+    public boolean showHeartButton = false;
+    public boolean showLockButton = false;
+    public boolean isUserSubscribed = false;
+
     public ArrayList<ChannelMyListDTO> channelMyListDTOArrayList = new ArrayList<>();
 
     public CategoriesPageRecyclerViewComponent_V1(Activity mContext, LinearLayout mContainer) {
@@ -790,6 +794,9 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
         adapter.imageHeight = imageHeight;
         adapter.imageWidth = imageWidth;
         adapter.totalWidth = genericdisplaymetrics.widthPixels;
+        adapter.showHeartButton = showHeartButton;
+        adapter.showLockButton = showLockButton;
+        adapter.isUserSubscribed = isUserSubscribed;
 
         int channelPosterWidth = imageWidth;
         int channelPosterHeight = imageHeight;

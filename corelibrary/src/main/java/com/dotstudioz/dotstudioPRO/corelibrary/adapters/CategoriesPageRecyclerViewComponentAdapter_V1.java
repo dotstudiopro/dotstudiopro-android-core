@@ -58,8 +58,8 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
     public boolean showSpotLightImage = false;
     public boolean showParentChannelOnly = false;
     private int childProgressColour = Color.parseColor("#F3AB13");
-    public boolean isMyListEnabled = false;
-    public boolean isSubscriptionEnabled = false;
+    public boolean showHeartButton = false;
+    public boolean showLockButton = false;
     public boolean isUserSubscribed = false;
 
 
@@ -191,7 +191,7 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
             holder.flParentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(imageWidth+((totalWidth*2)/100), imageHeight+((totalWidth*2)/100)));
 
             //====================================HEART ICON - START==================================================
-            if(isMyListEnabled) {
+            if(showHeartButton) {
                 boolean flagForHeart = false;
                 try {
                     for (int i = 0; i < channelMyListDTOArrayList.size(); i++) {
@@ -250,7 +250,7 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
             }
             //====================================HEART ICON  -  END==================================================
 
-            if(isSubscriptionEnabled) {
+            if(showLockButton) {
                 //code to draw a lock on the thumbnail in case this channel is part of subscription
                 try {
                     if(spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).isProduct() && !isUserSubscribed) {
