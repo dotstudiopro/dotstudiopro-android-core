@@ -34,7 +34,7 @@ import java.util.List;
 
 public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
         RecyclerView.Adapter<CategoriesPageRecyclerViewComponentAdapter_V1.ViewHolder> {
-    private static final String TAG = "CategoriesPageRecyclerViewComponentAdapter_V1";
+    private static final String TAG = "CatPageRecVCompAdapV1";
 
     private Context mcontext;
     public int totalWidth = 0;
@@ -58,6 +58,10 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
     public boolean showSpotLightImage = false;
     public boolean showParentChannelOnly = false;
     private int childProgressColour = Color.parseColor("#F3AB13");
+    public boolean isMyListEnabled = false;
+    public boolean isSubscriptionEnabled = false;
+    public boolean isUserSubscribed = false;
+
 
     public float videoTitleTVFontSize;
 
@@ -126,7 +130,7 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
         final SimpleDraweeView imageView = holder.siv;
 
         if(spotLightCategoriesDTO.getChildrenSpotLightCategoriesDTOList().size() > 0) {
-
+            //this condition was introduced in case of SpotNetwork, where there were nested categories
             try {
                 if(channelPosterWidth > 0 && channelPosterHeight > 0)
                     holder.fl.setLayoutParams(new LinearLayout.LayoutParams((channelPosterWidth+20), (channelPosterHeight)));
@@ -187,62 +191,75 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
             holder.flParentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(imageWidth+((totalWidth*2)/100), imageHeight+((totalWidth*2)/100)));
 
             //====================================HEART ICON - START==================================================
-            boolean flagForHeart = false;
-            try {
-                for(int i = 0; i < channelMyListDTOArrayList.size(); i++) {
-                    if(!flagForHeart && spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId().equalsIgnoreCase(channelMyListDTOArrayList.get(i).getId())) {
-                        flagForHeart = true;
+            if(isMyListEnabled) {
+                boolean flagForHeart = false;
+                try {
+                    for (int i = 0; i < channelMyListDTOArrayList.size(); i++) {
+                        if (!flagForHeart && spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId().equalsIgnoreCase(channelMyListDTOArrayList.get(i).getId())) {
+                            flagForHeart = true;
+                        }
+                        if (flagForHeart)
+                            break;
                     }
-                    if(flagForHeart)
-                        break;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
-            try {
-                if(flagForHeart)
-                    ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart).color(Color.parseColor("#D03B8F")));
-                else
-                    ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart_o).color(Color.parseColor("#ffffff")));
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
+                try {
+                    if (flagForHeart)
+                        ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart).color(Color.parseColor("#D03B8F")));
+                    else
+                        ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart_o).color(Color.parseColor("#ffffff")));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-            holder.heartButton.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View view, MotionEvent motionEvent) {
-                    if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                        boolean flagForHeart = false;
-                        try {
-                            for (int i = 0; i < channelMyListDTOArrayList.size(); i++) {
-                                if (!flagForHeart && spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId().equalsIgnoreCase(channelMyListDTOArrayList.get(i).getId())) {
-                                    flagForHeart = true;
+                holder.heartButton.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+                        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                            boolean flagForHeart = false;
+                            try {
+                                for (int i = 0; i < channelMyListDTOArrayList.size(); i++) {
+                                    if (!flagForHeart && spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId().equalsIgnoreCase(channelMyListDTOArrayList.get(i).getId())) {
+                                        flagForHeart = true;
+                                    }
+                                    if (flagForHeart)
+                                        break;
                                 }
-                                if (flagForHeart)
-                                    break;
+                            } catch (Exception e) {
+                                e.printStackTrace();
                             }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
 
-                        if (flagForHeart) {
-                            iCategoriesPageRecyclerViewComponentAdapter.deleteButtonClicked(spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId());
-                            ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart_o).color(Color.parseColor("#FFFFFF")));
-                        } else {
-                            iCategoriesPageRecyclerViewComponentAdapter.addToMyList(true,
-                                    spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId(),
-                                    spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getTitle(),
-                                    spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSlug(),
-                                    spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getPoster(),
-                                    spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSpotlightImage());
-                            ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart).color(Color.parseColor("#D03B8F")));
-                            //Toast.makeText(mcontext, "Heart Clicked", Toast.LENGTH_SHORT).show();
+                            if (flagForHeart) {
+                                iCategoriesPageRecyclerViewComponentAdapter.deleteButtonClicked(spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId());
+                                ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart_o).color(Color.parseColor("#FFFFFF")));
+                            } else {
+                                iCategoriesPageRecyclerViewComponentAdapter.addToMyList(true,
+                                        spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId(),
+                                        spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getTitle(),
+                                        spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSlug(),
+                                        spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getPoster(),
+                                        spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSpotlightImage());
+                                ((ImageView) holder.heartButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_heart).color(Color.parseColor("#D03B8F")));
+                                //Toast.makeText(mcontext, "Heart Clicked", Toast.LENGTH_SHORT).show();
+                            }
                         }
+                        return true;
                     }
-                    return true;
-                }
-            });
+                });
+            }
             //====================================HEART ICON  -  END==================================================
+
+            if(isSubscriptionEnabled) {
+                //code to draw a lock on the thumbnail in case this channel is part of subscription
+                try {
+                    if(spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).isProduct() && !isUserSubscribed) {
+                        ((ImageView) holder.lockButton).setImageDrawable(new IconDrawable(mcontext, FontAwesomeIcons.fa_lock).color(Color.parseColor("#ffffff")));
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
+            }
 
             //String channelIdPlusCategorySlug = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId() + "|" + spotLightCategoriesDTO.getCategorySlug() + "|" + position;
             String channelIdPlusCategorySlug = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getId() + "|" + spotLightCategoriesDTO.getCategorySlug();
@@ -289,13 +306,13 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
 
                     if(flag) {
                         imageURL = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSpotlightImage() + "/" + channelPosterWidth + "/" + channelPosterHeight;
-                        Log.d("CategoriesPageRecyclerViewComponentAdapter_V1", "imageURL==>"+imageURL);
+                        Log.d(TAG, "imageURL==>"+imageURL);
                         imageView.setLayoutParams(new RelativeLayout.LayoutParams(channelPosterWidth, channelPosterHeight));
                         holder.fl.setLayoutParams(new LinearLayout.LayoutParams(channelPosterWidth, channelPosterHeight));
                         holder.flParentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(channelPosterWidth+((totalWidth*2)/100), channelPosterHeight+((totalWidth*2)/100)));
                     } else {
                         imageURL = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSpotlightImage() + "/" + imageWidth + "/" + imageHeight;
-                        Log.d("CategoriesPageRecyclerViewComponentAdapter_V1", "imageURL==>"+imageURL);
+                        Log.d(TAG, "imageURL==>"+imageURL);
                         imageView.setLayoutParams(new RelativeLayout.LayoutParams(imageWidth, imageHeight));
                         holder.fl.setLayoutParams(new LinearLayout.LayoutParams(imageWidth, imageHeight));
                         holder.flParentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(imageWidth+((totalWidth*2)/100), imageHeight+((totalWidth*2)/100)));
@@ -314,13 +331,13 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
 
                     if(flag) {
                         imageURL = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getSpotlightImage() + "/" + channelPosterWidth + "/" + channelPosterHeight;
-                        Log.d("CategoriesPageRecyclerViewComponentAdapter_V1", "imageURL==>"+imageURL);
+                        Log.d(TAG, "imageURL==>"+imageURL);
                         imageView.setLayoutParams(new RelativeLayout.LayoutParams(channelPosterWidth, channelPosterHeight));
                         holder.fl.setLayoutParams(new LinearLayout.LayoutParams(channelPosterWidth, channelPosterHeight));
                         holder.flParentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(channelPosterWidth+((totalWidth*2)/100), channelPosterHeight+((totalWidth*2)/100)));
                     } else {
                         imageURL = spotLightCategoriesDTO.getSpotLightChannelDTOList().get(position).getPoster() + "/" + imageWidth + "/" + imageHeight;
-                        Log.d("CategoriesPageRecyclerViewComponentAdapter_V1", "imageURL2==>"+imageURL);
+                        Log.d(TAG, "imageURL2==>"+imageURL);
                         imageView.setLayoutParams(new RelativeLayout.LayoutParams(imageWidth, imageHeight));
                         holder.fl.setLayoutParams(new LinearLayout.LayoutParams(imageWidth, imageHeight));
                         holder.flParentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(imageWidth+((totalWidth*2)/100), imageHeight+((totalWidth*2)/100)));
@@ -440,6 +457,8 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
                 }
             });
         } else {
+            //this will render the video thumbnails
+            //this could be the rails like continue_watching, last_watched
             imageView.setLayoutParams(new RelativeLayout.LayoutParams(imageWidth, imageHeight));
 
             String tagString = spotLightCategoriesDTO.getCategoryName() + "|" + spotLightCategoriesDTO.getVideoInfoDTOList().get(position).getThumb();
@@ -619,6 +638,7 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
         LinearLayout childProgressContainer;
         LinearLayout flParentLinearLayout;
         ImageView heartButton;
+        ImageView lockButton;
 
 
         public ViewHolder( View itemView) {
@@ -631,6 +651,7 @@ public class CategoriesPageRecyclerViewComponentAdapter_V1 extends
             childProgressContainer = itemView.findViewById(R.id.childProgressContainer);
             flParentLinearLayout = itemView.findViewById(R.id.flParentLinearLayout);
             heartButton = itemView.findViewById(R.id.heartButton);
+            lockButton = itemView.findViewById(R.id.lockButton);
         }
     }
 }
