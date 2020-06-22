@@ -59,10 +59,19 @@ public class FontsConstants implements Serializable {
     public static Typeface robotMediumFont;
     public static Typeface robotRegularFont;
     public static Typeface robotLightFont;
+    public static Typeface robotoBlackItalicFont;
+    public static Typeface robotoBoldItalicFont;
+    public static Typeface robotoItalicFont;
+    public static Typeface robotoLightItalicFont;
+    public static Typeface robotoMediumItalicFont;
+    public static Typeface robotoThinFont;
+    public static Typeface robotoThinItalicFont;
     public static Typeface robotoCondensedBoldFont;
     public static Typeface robotoCondensedItalicFont;
     public static Typeface robotoCondensedLightFont;
     public static Typeface robotoCondensedRegularFont;
+    public static Typeface robotoCondensedBoldItalicFont;
+    public static Typeface robotoCondensedLightItalicFont;
     public static Typeface fjallaoneRegularFont;
     public static Typeface latoRegularFont;
     public static Typeface tfSitkaHeadingRegular;
@@ -161,10 +170,19 @@ public class FontsConstants implements Serializable {
         tfSitkaDisplayBold = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display-bold.ttc");
         robotRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_regular.ttf");
         robotLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_light.ttf");
+        robotoBlackItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_blackitalic.ttf");
+        robotoBoldItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_bolditalic.ttf");
+        robotoItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_italic.ttf");
+        robotoLightItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_lightitalic.ttf");
+        robotoMediumItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_mediumitalic.ttf");
+        robotoThinFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_thin.ttf");
+        robotoThinItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "roboto_thinitalic.ttf");
         robotoCondensedBoldFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_bold.ttf");
         robotoCondensedItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_italic.ttf");
         robotoCondensedLightFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_light.ttf");
         robotoCondensedRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_regular.ttf");
+        robotoCondensedBoldItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_bolditalic.ttf");
+        robotoCondensedLightItalicFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "robotocondensed_lightitalic.ttf");
         fjallaoneRegularFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "fjallaone_regular.ttf");
         sitka_headingFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-heading.ttc");
         sitka_displayFont = Typeface.createFromAsset(ctx.getResources().getAssets(), "sitka-display.ttc");
@@ -251,6 +269,13 @@ public class FontsConstants implements Serializable {
         ROBOTMEDIUMFONT,
         ROBOTREGULARFONT,
         ROBOTLIGHTFONT,
+        ROBOTOBLACKITALICFONT,
+        ROBOTOBOLDITALICFONT,
+        ROBOTOITALICFONT,
+        ROBOTOLIGHTITALICFONT,
+        ROBOTOMEDIUMITALICFONT,
+        ROBOTOTHINFONT,
+        ROBOTOTHINITALICFONT,
         LATOREGULARFONT,
         TFSITKAHEADINGREGULAR,
         TFSITKAHEADINGBOLD,
@@ -292,6 +317,8 @@ public class FontsConstants implements Serializable {
         ROBOTOCONDENSEDITALICFONT,
         ROBOTOCONDENSEDLIGHTFONT,
         ROBOTOCONDENSEDREGULARFONT,
+        ROBOTOCONDENSEDBOLDITALICFONT,
+        ROBOTOCONDENSEDLIGHTITALICFONT,
         FJALLAONEREGULARFONT
     };
     public Context context;
@@ -395,6 +422,20 @@ public class FontsConstants implements Serializable {
             return FontsConstants.robotMediumFont;
         } else if(fontsEnum == FONTS_ENUM.ROBOTREGULARFONT.ordinal()) {
             return FontsConstants.robotRegularFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOBLACKITALICFONT.ordinal()) {
+            return FontsConstants.robotoBlackItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOBOLDITALICFONT.ordinal()) {
+            return FontsConstants.robotoBoldItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOITALICFONT.ordinal()) {
+            return FontsConstants.robotoItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOLIGHTITALICFONT.ordinal()) {
+            return FontsConstants.robotoLightItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOMEDIUMITALICFONT.ordinal()) {
+            return FontsConstants.robotoMediumItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOTHINFONT.ordinal()) {
+            return FontsConstants.robotoThinFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOTHINITALICFONT.ordinal()) {
+            return FontsConstants.robotoThinItalicFont;
         } else if(fontsEnum == FONTS_ENUM.SFPROBOLD.ordinal()) {
             return FontsConstants.sfProBold;
         } else if(fontsEnum == FONTS_ENUM.SFPRODISPLAYREGULAR.ordinal()) {
@@ -475,6 +516,10 @@ public class FontsConstants implements Serializable {
             return FontsConstants.robotoCondensedLightFont;
         } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDREGULARFONT.ordinal()) {
             return FontsConstants.robotoCondensedRegularFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDBOLDITALICFONT.ordinal()) {
+            return FontsConstants.robotoCondensedBoldItalicFont;
+        } else if(fontsEnum == FONTS_ENUM.ROBOTOCONDENSEDLIGHTITALICFONT.ordinal()) {
+            return FontsConstants.robotoCondensedLightItalicFont;
         } else if(fontsEnum == FONTS_ENUM.FJALLAONEREGULARFONT.ordinal()) {
             return FontsConstants.robotoCondensedRegularFont;
         }

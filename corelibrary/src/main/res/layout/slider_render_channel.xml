@@ -11,6 +11,27 @@
         android:layout_height="match_parent" />
 
     <TextView
+        android:id="@+id/videoTitleTextViewBottom"
+        android:textColor="#eeeeee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:maxLines="2"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:text="Featured"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/playButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/play_button_large_white_trans_big"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <TextView
         android:id="@+id/featuredTextView"
         android:textColor="#eeeeee"
         android:layout_width="wrap_content"
