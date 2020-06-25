@@ -3,6 +3,7 @@ package com.dotstudioz.dotstudioPRO.corelibrary.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -42,6 +44,8 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
     public int informationIconWidth;
     public int informationIconHeight;
     public boolean showCategoryName;
+    public int progressBarColour;
+    public boolean progressBarColourSetFlag = false;
 
     private boolean isCustomFontEnabledForVideoTitle = false;
     private Typeface customFontForVideoTitle;
@@ -90,6 +94,8 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                 rosterImageRL.setLayoutParams(new LinearLayout.LayoutParams(imageWidth, imageHeight));
 
             convertView.findViewById(R.id.rosterItemProgressBar).setPadding(0, 0, 0, 0);
+            if(progressBarColourSetFlag)
+                ((ProgressBar)convertView.findViewById(R.id.rosterItemProgressBar)).getIndeterminateDrawable().setColorFilter(progressBarColour, PorterDuff.Mode.MULTIPLY);
 
             RelativeLayout.LayoutParams params1 = null;
             if (tabletFlag)
@@ -193,6 +199,8 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                         rosterImageRL2.setLayoutParams(new LinearLayout.LayoutParams(imageWidth, imageHeight));
 
                     convertView.findViewById(R.id.rosterItemProgressBar2).setPadding(0, 0, 0, 0);
+                    if(progressBarColourSetFlag)
+                        ((ProgressBar)convertView.findViewById(R.id.rosterItemProgressBar2)).getIndeterminateDrawable().setColorFilter(progressBarColour, PorterDuff.Mode.MULTIPLY);
 
                     RelativeLayout.LayoutParams params2 = null;
                     if (tabletFlag)
