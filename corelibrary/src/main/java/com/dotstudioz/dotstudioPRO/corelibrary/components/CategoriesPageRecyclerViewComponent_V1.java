@@ -121,6 +121,9 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
     public int categoryNameTVFontColor = Color.parseColor("#ffffff");
     public int viewAllIVColor = Color.parseColor("#eeeeee");
 
+    public Typeface viewAllTVFont = FontsConstants.latoRegular;
+    public int viewAllTVColor = Color.parseColor("#D03B8F");
+
     public int featuredTitleColour = Color.parseColor("#eeeeee");
     public int featuredSliderIndicator = Color.parseColor("#eeeeee");
     public int activeFeaturedSliderIndicator = Color.parseColor("#6dec68");
@@ -915,13 +918,14 @@ public class CategoriesPageRecyclerViewComponent_V1 implements
         viewAllTV.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         viewAllTV.setBackground(null);
         viewAllTV.setText("View All");
-        viewAllTV.setTypeface(FontsConstants.latoRegular);
+        viewAllTV.setTypeface(viewAllTVFont);
         viewAllTV.setGravity(Gravity.RIGHT);
         viewAllTV.setAllCaps(false);
         viewAllTV.setTextSize(15);
         //viewAllTV.setTextColor(Color.parseColor("#6f6f6f"));
         //viewAllTV.setTextColor(Color.parseColor("#78c4e3"));
-        viewAllTV.setTextColor(Color.parseColor("#D03B8F"));
+        //viewAllTV.setTextColor(Color.parseColor("#D03B8F"));
+        viewAllTV.setTextColor(viewAllTVColor);
         viewAllTV.setTag(spotLightCategoriesDTO1.getCategorySlug());
         viewAllTV.setOnClickListener(new View.OnClickListener() {
             @Override
