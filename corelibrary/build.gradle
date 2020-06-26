@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 125
-        versionName "2.0.44"
+        versionCode 126
+        versionName "2.0.45"
     }
     buildTypes {
         release {

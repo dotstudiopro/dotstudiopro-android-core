@@ -97,14 +97,19 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
             if(progressBarColourSetFlag)
                 ((ProgressBar)convertView.findViewById(R.id.rosterItemProgressBar)).getIndeterminateDrawable().setColorFilter(progressBarColour, PorterDuff.Mode.MULTIPLY);
 
+            RelativeLayout.LayoutParams params11 = null;
+            if (tabletFlag)
+                params11 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
+            else
+                params11 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
+            params11.setMargins(10, 10, 10, 10);
+            convertView.findViewById(R.id.placeHolder1View).setLayoutParams(params11);
+
             RelativeLayout.LayoutParams params1 = null;
             if (tabletFlag)
                 params1 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
             else
                 params1 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
-
-            convertView.findViewById(R.id.placeHolder1View).setPadding(10, 10, 10, 10);
-            convertView.findViewById(R.id.placeHolder1View).setLayoutParams(params1);
             convertView.findViewById(R.id.iv1).setPadding(10, 10, 10, 10);
             convertView.findViewById(R.id.iv1).setLayoutParams(params1);
             convertView.findViewById(R.id.iv1).setClickable(true);
@@ -205,13 +210,20 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                     if(progressBarColourSetFlag)
                         ((ProgressBar)convertView.findViewById(R.id.rosterItemProgressBar2)).getIndeterminateDrawable().setColorFilter(progressBarColour, PorterDuff.Mode.MULTIPLY);
 
+                    RelativeLayout.LayoutParams params21 = null;
+                    if (tabletFlag)
+                        params21 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
+                    else
+                        params21 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
+                    params21.setMargins(10, 10, 10, 10);
+                    convertView.findViewById(R.id.placeHolder2View).setLayoutParams(params21);
+
                     RelativeLayout.LayoutParams params2 = null;
                     if (tabletFlag)
                         params2 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
                     else
                         params2 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
-                    convertView.findViewById(R.id.placeHolder2View).setPadding(10, 10, 10, 10);
-                    convertView.findViewById(R.id.placeHolder2View).setLayoutParams(params1);
+
                     convertView.findViewById(R.id.iv2).setPadding(10, 10, 10, 10);
                     convertView.findViewById(R.id.iv2).setLayoutParams(params2);
                     convertView.findViewById(R.id.iv2).setClickable(true);
