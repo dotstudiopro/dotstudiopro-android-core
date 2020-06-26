@@ -102,6 +102,9 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                 params1 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
             else
                 params1 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
+
+            convertView.findViewById(R.id.placeHolder1View).setPadding(10, 10, 10, 10);
+            convertView.findViewById(R.id.placeHolder1View).setLayoutParams(params1);
             convertView.findViewById(R.id.iv1).setPadding(10, 10, 10, 10);
             convertView.findViewById(R.id.iv1).setLayoutParams(params1);
             convertView.findViewById(R.id.iv1).setClickable(true);
@@ -207,6 +210,8 @@ public class Categories_TwoColumn_Adapter_V1 extends BaseAdapter {
                         params2 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
                     else
                         params2 = new RelativeLayout.LayoutParams(imageWidth, imageHeight);
+                    convertView.findViewById(R.id.placeHolder2View).setPadding(10, 10, 10, 10);
+                    convertView.findViewById(R.id.placeHolder2View).setLayoutParams(params1);
                     convertView.findViewById(R.id.iv2).setPadding(10, 10, 10, 10);
                     convertView.findViewById(R.id.iv2).setLayoutParams(params2);
                     convertView.findViewById(R.id.iv2).setClickable(true);
