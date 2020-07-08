@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 126
-        versionName "2.0.45"
+        versionCode 127
+        versionName "2.0.46"
     }
     buildTypes {
         release {
@@ -85,7 +85,7 @@ dependencies {
     implementation 'com.joanzapata.iconify:android-iconify-weathericons:2.2.2'// (v2.0)
     implementation 'com.joanzapata.iconify:android-iconify-simplelineicons:2.2.2'// (v1.0.0)
     implementation 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'// (v2.0.1)
-    implementation ('com.github.dotstudiopro:dotstudiopro-android-model:1.0.20') {
+    implementation ('com.github.dotstudiopro:dotstudiopro-android-model:1.0.21') {
         exclude group: 'com.android.support'
     }
     /*implementation ('com.github.dotstudiopro:dotstudiopro-android-analytics:2.0.1') {
